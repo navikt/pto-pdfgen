@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8"/>
+    {{#block 'vedtak14a/partials/style' }}
+    {{/block}}
+    <title>{{tittel}}</title>
+</head>
+
+<body>
+<div class="main">
+    <div class="header">
+        <div class="nav-logo-container">
+            <img class="nav-logo" src="{{image "Navlogo.png"}}">
+            {{#eq malform "NN"}}
+                <p>Unntatt offentleg innsyn etteroffentleglova § 13 første ledd og NAV-loven § 7</p>
+            {{/eq}}
+            {{#eq malform "NB"}}
+                <p>Unntatt offentlighet etter offentleglova § 13 første ledd og NAV-loven § 7</p>
+            {{/eq}}
+        </div>
+
+        <div class="personalia">
+            <p>
+                {{mottaker.navn}}<br/>
+                {{mottaker.adresse}}<br/>
+                {{mottaker.postnummer}} {{mottaker.poststed}}
+            </p>
+        </div>
+        <div class="dato">
+            <p>Dato: {{iso_to_date dato}}</p>
+        </div>
+    </div>
+
+    {{> @partial-block}}
+
+</div>
+</body>
+
+</html>

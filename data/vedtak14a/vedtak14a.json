@@ -1,0 +1,16 @@
+{
+  "tittel": "14a vedtak",
+  "veilederNavn": "Veileder Veiledersen",
+  "navKontor": "NAV Kontor",
+  "dato": "2020-10-15",
+  "malType": "STANDARD_INNSATS_SKAFFE_ARBEID",
+  "malform": "NB",
+  "mottaker": {
+    "navn": "Navn Navnesen",
+    "adresse": "Adresseveien 1",
+    "postnummer": "0000",
+    "poststed": "Sted"
+  },
+  "begrunnelse": ["avsnitt 1", "avsnitt 2"],
+  "kilder": ["kilde 1", "kilde 2"]
+}

@@ -1,0 +1,39 @@
+<h3>Dette har vi lagt vekt på</h3>
+<p>
+    {{#eq malform "NN"}}
+        I vurderinga vår har vi lagt vekt på desse opplysningane:
+    {{/eq}}
+    {{#eq malform "NB"}}
+        I vurderingen vår har vi lagt vekt på disse opplysningene:
+    {{/eq}}
+<ul>
+    {{#each kilder}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+<p>
+    {{#not_eq malType "STANDARD_INNSATS_SKAFFE_ARBEID_PROFILERING"}}
+        {{#eq malform "NN"}}
+            I tillegg har vi lagt vekt på kva moglegheiter du har i arbeidsmarknaden.
+        {{/eq}}
+        {{#eq malform "NB"}}
+            I tillegg har vi lagt vekt på mulighetene dine i arbeidsmarkedet.
+        {{/eq}}
+    {{/not_eq}}
+    {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID_PROFILERING"}}
+        {{#eq malform "NN"}}
+            I tillegg har vi lagt vekt på kva moglegheiter du har i arbeidsmarknaden, og at du har vore i jobb i minst
+            seks av dei siste tolv månadene.
+        {{/eq}}
+        {{#eq malform "NB"}}
+            I tillegg har vi lagt vekt på mulighetene dine i arbeidsmarkedet og at du har vært i jobb i minst 6 av de
+            siste 12 månedene.
+        {{/eq}}
+    {{/eq}}
+    {{#eq malform "NN"}}
+        Du finn nokre av opplysningane vi har om deg, på nav.no/dittnav.
+    {{/eq}}
+    {{#eq malform "NB"}}
+        Du finner noen av opplysningene vi har om deg på nav.no/dittnav.
+    {{/eq}}
+</p>

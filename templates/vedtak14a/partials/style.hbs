@@ -1,0 +1,47 @@
+<style>
+    * {
+        font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+    }
+
+    @page {
+        @bottom-right {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            font-size: 15px;
+            content: "Side "counter(page) " av "counter(pages);
+        }
+    }
+
+    .avoid-page-break {
+        page-break-inside: avoid;
+    }
+
+    .header {
+        margin-bottom: 2em;
+    }
+
+    .nav-logo-container {
+        float:right;
+        width: 150px;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .nav-logo {
+        width: 125px;
+        height: auto;
+    }
+
+    .personalia {
+        clear: both;
+        padding-bottom: 1em;
+    }
+
+    .dato {
+        float:right;
+    }
+
+    .innhold {
+        clear: both;
+    }
+
+</style>
