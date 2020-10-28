@@ -1,9 +1,11 @@
-{{#eq malform "NN"}}
-    <h3>Dette er grunngivinga vår</h3>
-{{/eq}}
-{{#eq malform "NB"}}
-    <h3>Dette er begrunnelsen vår</h3>
-{{/eq}}
-{{#each begrunnelse}}
-    <p>{{this}}</p>
-{{/each}}
+{{#is_defined begrunnelse}}
+    {{#eq malform "NN"}}
+        <h3>Dette er grunngivinga vår</h3>
+    {{/eq}}
+    {{#eq malform "NB"}}
+        <h3>Dette er begrunnelsen vår</h3>
+    {{/eq}}
+    {{#each begrunnelse}}
+        <p>{{this}}</p>
+    {{/each}}
+{{/is_defined}}

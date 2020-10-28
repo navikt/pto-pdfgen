@@ -7,3 +7,28 @@
 {{#eq malType "STANDARD_INNSATS_BEHOLDE_ARBEID"}}
     {{> vedtak14a/partials/maler/standard-beholde}}
 {{/eq}}
+{{#eq malType "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID"}}
+    {{> vedtak14a/partials/maler/situasjonsbestemt-skaffe}}
+{{/eq}}
+{{#eq malType "SITUASJONSBESTEMT_INNSATS_BEHOLDE_ARBEID"}}
+    {{> vedtak14a/partials/maler/situasjonsbestemt-beholde}}
+{{/eq}}
+{{#eq malType "SPESIELT_TILPASSET_INNSATS_SKAFFE_ARBEID"}}
+    {{> vedtak14a/partials/maler/spesielt-tilpasset-skaffe}}
+{{/eq}}
+{{#eq malType "SPESIELT_TILPASSET_INNSATS_BEHOLDE_ARBEID"}}
+    {{> vedtak14a/partials/maler/spesielt-tilpasset-beholde}}
+{{/eq}}
+{{#eq malType "GRADERT_VARIG_TILPASSET_INNSATS"}}
+    {{> vedtak14a/partials/maler/gradert-varig}}
+{{/eq}}
+{{#eq malType "VARIG_TILPASSET_INNSATS"}}
+    {{> vedtak14a/partials/maler/varig}}
+{{/eq}}
+
+{{#eq malform "NN"}}
+    <p>Vedtaket er gjort etter lov om arbeids- og velferdsforvaltninga (NAV-lova) § 14a.</p>
+{{/eq}}
+{{#eq malform "NB"}}
+    <p>Vedtaket er gjort etter lov om arbeids- og velferdsforvaltningen (NAV-loven) § 14a.</p>
+{{/eq}}

@@ -1,13 +1,5 @@
 {{#> vedtak14a/base}}
-    <div class="innhold">
-
         {{> vedtak14a/partials/innledning}}
-        {{#eq malform "NN"}}
-            <p>Vedtaket er gjort etter lov om arbeids- og velferdsforvaltninga (NAV-lova) § 14a.</p>
-        {{/eq}}
-        {{#eq malform "NB"}}
-            <p>Vedtaket er gjort etter lov om arbeids- og velferdsforvaltningen (NAV-loven) § 14a.</p>
-        {{/eq}}
         {{> vedtak14a/partials/begrunnelse}}
         {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID" }}
             {{> vedtak14a/partials/hjelp}}
@@ -15,10 +7,11 @@
         {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID_PROFILERING" }}
             {{> vedtak14a/partials/hjelp}}
         {{/eq}}
+        {{#eq malType "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID" }}
+            {{> vedtak14a/partials/hjelp}}
+        {{/eq}}
         {{> vedtak14a/partials/kilder}}
         {{> vedtak14a/partials/klage}}
         {{> vedtak14a/partials/sporsmal}}
         {{> vedtak14a/partials/signatur}}
-
-    </div>
 {{/vedtak14a/base}}
