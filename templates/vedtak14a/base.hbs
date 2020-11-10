@@ -5,12 +5,17 @@
     <meta charset="UTF-8"/>
     {{#block 'vedtak14a/partials/style' }}
     {{/block}}
-    <title>{{tittel}}</title>
 </head>
 
 <body>
 <div class="main">
     <div class="header">
+
+        <div class="returadresse">
+            Returadresse,<br/>
+            {{kontaktEnhetNavn}}, {{returadresse.adresselinje}}, {{returadresse.postnummer}} {{returadresse.poststed}}
+        </div>
+
         <div class="nav-logo-container">
             <img class="nav-logo" src="{{image "Navlogo.png"}}">
             {{#eq malform "NN"}}
@@ -24,12 +29,14 @@
         <div class="personalia">
             <p>
                 {{mottaker.navn}}<br/>
-                {{mottaker.adresse}}<br/>
-                {{mottaker.postnummer}} {{mottaker.poststed}}
+                {{mottaker.adresse.adresselinje1}}<br/>
+                {{mottaker.adresse.adresselinje2}}<br/>
+                {{mottaker.adresse.adresselinje3}}<br/>
+                {{mottaker.adresse.postnummer}} {{mottaker.adresse.poststed}}
             </p>
         </div>
         <div class="dato">
-            <p>Dato: {{iso_to_date dato}}</p>
+            <p>Dato: {{dato}}</p>
         </div>
     </div>
 
