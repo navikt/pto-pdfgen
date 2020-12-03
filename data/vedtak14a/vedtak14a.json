@@ -15,5 +15,6 @@
     "adresselinje": "Returadressen",
     "postnummer": "4321",
     "poststed": "Retur Poststed"
-  }
+  },
+  "utkast": true
 }
