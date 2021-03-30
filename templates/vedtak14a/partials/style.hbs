@@ -3,13 +3,49 @@
         font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
     }
 
+    img {
+        image-rendering: pixelated; /* Required for PDF/A-compliance */
+    }
+
     @page {
-        @bottom-right {
-            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-            font-size: 15px;
-            content: "Side "counter(page) " av "counter(pages);
+        size: A4 portrait;
+        margin: 2cm;
+        padding-bottom: 1cm;
+
+        @bottom-center {
+            content: element(footer);
         }
     }
+
+    .main {
+        height: 800px;
+    }
+
+    .header {
+        margin-bottom: 2em;
+    }
+
+   .footer {
+        border-top: 1px solid black;
+        padding-top: 16px;
+        margin-top: -2cm;
+        margin-left: 2.5mm;
+        width: 165mm;
+        position: running(footer);
+        font-size: 11pt;
+    }
+
+    .page-counter {
+        display: inline;
+        margin: 0;
+    }
+
+    .page-counter::after {
+        position: absolute;
+        bottom: 37px;
+        right: -20px;
+        content: "Side "counter(page) " av "counter(pages);
+     }
 
     .vannmerke-container {
       position: fixed;
@@ -27,10 +63,6 @@
 
     .avoid-page-break {
         page-break-inside: avoid;
-    }
-
-    .header {
-        margin-bottom: 2em;
     }
 
     .nav-logo-container {

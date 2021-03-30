@@ -8,44 +8,50 @@
 </head>
 
 <body>
-<div class="main">
-    <div class="header">
+    <div class="main">
+        <div class="header">
 
-        <div class="returadresse">
-            Returadresse,<br/>
-            {{kontaktEnhetNavn}}, {{returadresse.adresselinje}}, {{returadresse.postnummer}} {{returadresse.poststed}}
+            <div class="returadresse">
+                Returadresse,<br/>
+                {{kontaktEnhetNavn}}, {{returadresse.adresselinje}}, {{returadresse.postnummer}} {{returadresse.poststed}}
+            </div>
+
+            <div class="nav-logo-container">
+                <img class="nav-logo" src="{{image "Navlogo.png"}}">
+                {{#eq malform "NN"}}
+                    <p>Unntatt offentleg innsyn etteroffentleglova § 13 første ledd og NAV-loven § 7</p>
+                {{/eq}}
+                {{#eq malform "NB"}}
+                    <p>Unntatt offentlighet etter offentleglova § 13 første ledd og NAV-loven § 7</p>
+                {{/eq}}
+            </div>
+
+            <div class="personalia">
+                <p>
+                    {{mottaker.navn}}<br/>
+                </p>
+            </div>
+            <div class="dato">
+                <p>Dato: {{dato}}</p>
+            </div>
         </div>
 
-        <div class="nav-logo-container">
-            <img class="nav-logo" src="{{image "Navlogo.png"}}">
-            {{#eq malform "NN"}}
-                <p>Unntatt offentleg innsyn etteroffentleglova § 13 første ledd og NAV-loven § 7</p>
-            {{/eq}}
-            {{#eq malform "NB"}}
-                <p>Unntatt offentlighet etter offentleglova § 13 første ledd og NAV-loven § 7</p>
-            {{/eq}}
+        <div class="innhold">
+            {{> @partial-block}}
         </div>
 
-        <div class="personalia">
-            <p>
-                {{mottaker.navn}}<br/>
-            </p>
-        </div>
-        <div class="dato">
-            <p>Dato: {{dato}}</p>
-        </div>
+        {{#if utkast}}
+            <div class="vannmerke-container">
+                 <span class="vannmerke">UTKAST</span>
+            </div>
+        {{/if}}
     </div>
-
-    <div class="innhold">
-        {{> @partial-block}}
+    <div class="footer">
+        <strong style="margin: 0">NAV Ullern</strong>
+        <p style="margin: 0">Postadresse: NAV Ullern // Postboks 8 Alnabru // 1640 OSLO</p>
+        <p style="margin: 0">Telefon: 92323232 // nav.no</p>
+        <p class="page-counter"/>
     </div>
-
-{{#if utkast}}
-    <div class="vannmerke-container">
-         <span class="vannmerke">UTKAST</span>
-    </div>
-{{/if}}
-</div>
 </body>
 
 </html>
