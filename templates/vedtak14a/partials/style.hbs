@@ -21,7 +21,7 @@
     @page {
         size: A4 portrait;
         margin: 2cm 2.5cm;
-        padding-bottom: 1cm;
+        padding-bottom: 2cm;
 
         @bottom-center {
             content: element(footer);
@@ -95,7 +95,7 @@
     .footer {
         border-top: 1px solid black;
         padding-top: 16px;
-        margin-top: -2cm;
+        margin-top: -2.5cm;
         width: 160mm;
         position: running(footer);
         font-size: 11pt;
@@ -108,7 +108,7 @@
 
     .page-counter::after {
         position: absolute;
-        bottom: 37px;
+        bottom: 55px;
         right: -30px;
         content: "Side " counter(page) " av " counter(pages);
     }
