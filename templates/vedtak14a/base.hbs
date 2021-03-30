@@ -9,30 +9,29 @@
 
 <body>
     <div class="main">
+
         <div class="header">
-
-            <div class="returadresse">
-                Returadresse,<br/>
-                {{kontaktEnhetNavn}}, {{returadresse.adresselinje}}, {{returadresse.postnummer}} {{returadresse.poststed}}
-            </div>
-
             <div class="nav-logo-container">
                 <img class="nav-logo" src="{{image "Navlogo.png"}}">
-                {{#eq malform "NN"}}
-                    <p>Unntatt offentleg innsyn etteroffentleglova § 13 første ledd og NAV-loven § 7</p>
-                {{/eq}}
-                {{#eq malform "NB"}}
-                    <p>Unntatt offentlighet etter offentleglova § 13 første ledd og NAV-loven § 7</p>
-                {{/eq}}
             </div>
 
-            <div class="personalia">
-                <p>
-                    {{mottaker.navn}}<br/>
-                </p>
-            </div>
-            <div class="dato">
-                <p>Dato: {{dato}}</p>
+            <div class="header__info">
+                <div class="personalia">
+                    <p style="margin: 0">{{mottaker.navn}}</p>
+                    <p style="margin: 0">BLÅBÆRSTIEN 10</p>
+                    <p style="margin: 0">0652 OSLO</p>
+                </div>
+                <div class="dato-og-unntatt">
+                    <p style="margin: 0">Dato: {{dato}}</p>
+                    <em class="unntatt-offentligheten" style="margin: 0">
+                        {{#eq malform "NN"}}
+                            TODO
+                        {{/eq}}
+                        {{#eq malform "NB"}}
+                            Unntatt offentligheten
+                        {{/eq}}
+                    </em>
+                </div>
             </div>
         </div>
 
