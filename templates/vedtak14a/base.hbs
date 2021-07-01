@@ -18,8 +18,6 @@
             <div class="header__info">
                 <div class="personalia">
                     <p style="margin: 0">{{mottaker.navn}}</p>
-                    <p style="margin: 0">BLÅBÆRSTIEN 10</p>
-                    <p style="margin: 0">0652 OSLO</p>
                 </div>
                 <div class="dato-og-unntatt">
                     <p style="margin: 0">Dato: {{dato}}</p>
@@ -46,9 +44,9 @@
         {{/if}}
     </div>
     <div class="footer">
-        <strong style="margin: 0">NAV Ullern</strong>
-        <p style="margin: 0">Postadresse: NAV Ullern // Postboks 8 Alnabru // 1640 OSLO</p>
-        <p style="margin: 0">Telefon: 92323232 // nav.no</p>
+        <strong style="margin: 0">{{navKontor}}</strong>
+        <p style="margin: 0">Postadresse: {{kontaktEnhetNavn}} // {{postadresse.adresselinje}} // {{postadresse.postnummer}} {{postadresse.poststed}}</p>
+        <p style="margin: 0">Telefon: {{kontaktTelefonnummer}} // nav.no</p>
         <p class="page-counter"/>
     </div>
 </body>
