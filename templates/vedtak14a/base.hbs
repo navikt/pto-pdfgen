@@ -8,44 +8,47 @@
 </head>
 
 <body>
-<div class="main">
-    <div class="header">
+    <div class="main">
 
-        <div class="returadresse">
-            Returadresse,<br/>
-            {{kontaktEnhetNavn}}, {{returadresse.adresselinje}}, {{returadresse.postnummer}} {{returadresse.poststed}}
+        <div class="header">
+            <div class="nav-logo-container">
+                <img class="nav-logo" src="{{image "Navlogo.png"}}">
+            </div>
+
+            <div class="header__info">
+                <div class="personalia">
+                    <p style="margin: 0">{{mottaker.navn}}</p>
+                </div>
+                <div class="dato-og-unntatt">
+                    <p style="margin: 0">Dato: {{dato}}</p>
+                    <em class="unntatt-offentligheten" style="margin: 0">
+                        {{#eq malform "NN"}}
+                            Unntatt offentlegheita
+                        {{/eq}}
+                        {{#eq malform "NB"}}
+                            Unntatt offentligheten
+                        {{/eq}}
+                    </em>
+                </div>
+            </div>
         </div>
 
-        <div class="nav-logo-container">
-            <img class="nav-logo" src="{{image "Navlogo.png"}}">
-            {{#eq malform "NN"}}
-                <p>Unntatt offentleg innsyn etteroffentleglova § 13 første ledd og NAV-loven § 7</p>
-            {{/eq}}
-            {{#eq malform "NB"}}
-                <p>Unntatt offentlighet etter offentleglova § 13 første ledd og NAV-loven § 7</p>
-            {{/eq}}
+        <div class="innhold">
+            {{> @partial-block}}
         </div>
 
-        <div class="personalia">
-            <p>
-                {{mottaker.navn}}<br/>
-            </p>
-        </div>
-        <div class="dato">
-            <p>Dato: {{dato}}</p>
-        </div>
+        {{#if utkast}}
+            <div class="vannmerke-container">
+                 <span class="vannmerke">UTKAST</span>
+            </div>
+        {{/if}}
     </div>
-
-    <div class="innhold">
-        {{> @partial-block}}
+    <div class="footer">
+        <strong style="margin: 0">{{navKontor}}</strong>
+        <p style="margin: 0">Postadresse: {{kontaktEnhetNavn}} // {{postadresse.adresselinje}} // {{postadresse.postnummer}} {{postadresse.poststed}}</p>
+        <p style="margin: 0">Telefon: {{kontaktTelefonnummer}} // nav.no</p>
+        <p class="page-counter"/>
     </div>
-
-{{#if utkast}}
-    <div class="vannmerke-container">
-         <span class="vannmerke">UTKAST</span>
-    </div>
-{{/if}}
-</div>
 </body>
 
 </html>
