@@ -2,19 +2,20 @@
   "malType": "STANDARD_INNSATS_SKAFFE_ARBEID",
   "veilederNavn": "Veileder Navn",
   "navKontor": "Nav Kontor",
-  "kontaktEnhetNavn": "Nav Kontaktenhet",
   "dato": "20. januar 2020",
   "malform": "NB",
   "begrunnelse": ["Avsnitt 1", "Avsnitt 2"],
   "kilder": ["Kilde 1", "Kilde 2"],
-
   "mottaker": {
+    "fnr": "12345678901",
     "navn": "Mottaker Navn"
   },
-  "returadresse": {
-    "adresselinje": "Returadressen",
+  "kontaktEnhetNavn": "Nav Kontaktenhet",
+  "kontaktTelefonnummer": "00000000",
+  "postadresse": {
+    "adresselinje": "Postadressen",
     "postnummer": "4321",
-    "poststed": "Retur Poststed"
+    "poststed": "Post Sted"
   },
   "utkast": true
 }

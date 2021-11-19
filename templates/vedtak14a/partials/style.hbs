@@ -1,21 +1,89 @@
 <style>
-    * {
+    html, body {
+        margin: 0;
         font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        line-height: 1.3;
+    }
+
+    h1 {
+        font-size: 16pt;
+    }
+
+    h2 {
+        margin-top: 48px;
+        font-size: 14pt;
+    }
+
+    img {
+        image-rendering: auto;
     }
 
     @page {
-        @bottom-right {
-            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-            font-size: 15px;
-            content: "Side "counter(page) " av "counter(pages);
+        size: A4 portrait;
+        margin: 2cm 2.5cm;
+        padding-bottom: 2cm;
+
+        @bottom-center {
+            content: element(footer);
         }
     }
 
+    .main {
+        height: 0; /*for å vise footer på alle sider*/
+    }
+
+    .header {
+        height: 7cm;
+    }
+
+    .header__info {
+        display: block;
+        margin-top: 1cm;
+        margin-bottom: 1cm;
+    }
+
+    .nav-logo-container {
+        display: block;
+        height: 80px;
+        margin-bottom: 0.5cm;
+    }
+
+    .nav-logo {
+        width: 95px;
+        height: auto;
+        float: right;
+    }
+
+    .personalia {
+        display: inline;
+        font-size: 12pt;
+        float: left;
+        width: 50%;
+    }
+
+    .dato-og-unntatt {
+        display: inline;
+        font-size: 12pt;
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
+
+    .unntatt-offentligheten {
+        font-size: 11pt;
+    }
+
+    .innhold {
+        position: relative;
+        z-index: 100;
+        clear: both;
+    }
+
     .vannmerke-container {
-      position: fixed;
-      bottom: 0;
-      right: 0;
-      top: 650px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        top: 650px;
     }
 
     .vannmerke {
@@ -25,39 +93,34 @@
         transform: rotate(-45deg);
     }
 
+    .footer {
+        border-top: 1px solid black;
+        padding-top: 16px;
+        margin-top: -2.5cm;
+        width: 160mm;
+        position: running(footer);
+        font-size: 11pt;
+    }
+
+    .page-counter {
+        display: inline;
+        margin: 0;
+    }
+
+    .page-counter::after {
+        position: absolute;
+        bottom: 55px;
+        right: -30px;
+        content: "Side " counter(page) " av " counter(pages);
+    }
+
     .avoid-page-break {
         page-break-inside: avoid;
     }
 
-    .header {
-        margin-bottom: 2em;
-    }
-
-    .nav-logo-container {
-        float:right;
-        width: 150px;
-        font-size: 10px;
-        text-align: center;
-    }
-
-    .nav-logo {
-        width: 125px;
-        height: auto;
-    }
-
-    .personalia {
-        clear: both;
-        padding-bottom: 1em;
-    }
-
-    .dato {
-        float:right;
-    }
-
-    .innhold {
-        position: relative;
-        z-index: 100;
-        clear: both;
+    .lenke {
+        display: inline-block;
+        white-space: nowrap;
     }
 
 </style>
