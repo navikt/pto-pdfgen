@@ -1,4 +1,4 @@
-{{#is_defined begrunnelse}}
+{{#if begrunnelse}}
     {{#eq malform "NN"}}
         <h2>Dette er grunngivinga vår</h2>
     {{/eq}}
@@ -8,4 +8,4 @@
     {{#each begrunnelse}}
         <p>{{this}}</p>
     {{/each}}
-{{/is_defined}}
+{{/if}}

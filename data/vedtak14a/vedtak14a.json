@@ -1,6 +1,6 @@
 {
   "malType": "STANDARD_INNSATS_SKAFFE_ARBEID",
-  "veilederNavn": "Veileder Navn",
+  "veilederNavn": "Veiledersen, Veileder",
   "navKontor": "Nav Kontor",
   "dato": "20. januar 2020",
   "malform": "NB",
@@ -8,7 +8,7 @@
   "kilder": ["Kilde 1", "Kilde 2"],
   "mottaker": {
     "fnr": "12345678901",
-    "navn": "Mottaker Navn"
+    "navn": "NAVN NAVNESEN"
   },
   "kontaktEnhetNavn": "Nav Kontaktenhet",
   "kontaktTelefonnummer": "00000000",
