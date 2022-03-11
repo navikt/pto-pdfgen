@@ -16,8 +16,21 @@
             </div>
 
             <div class="header__info">
-                <div class="personalia">
-                    <p style="margin: 0">{{mottaker.navn}}</p>
+                <div class="mottaker">
+                    <p style="margin: 0">
+                        {{mottaker.navn}}
+                        {{#if mottaker.adresselinje1}} <br/>{{mottaker.adresselinje1}}{{/if}}
+                        {{#if mottaker.adresselinje2}} <br/>{{mottaker.adresselinje2}}{{/if}}
+                        {{#if mottaker.adresselinje3}} <br/>{{mottaker.adresselinje3}}{{/if}}
+                        {{#if mottaker.postnummer}}
+                            <br/>{{mottaker.postnummer}} {{mottaker.poststed}}
+                        {{else}}
+                            {{#if mottaker.poststed}}
+                                <br/>{{mottaker.postnummer}} {{mottaker.poststed}}
+                            {{/if}}
+                        {{/if}}
+                        {{#if mottaker.land}} <br/>{{mottaker.land}}{{/if}}
+                    </p>
                 </div>
                 <div class="dato-og-unntatt">
                     <p style="margin: 0">Dato: {{dato}}</p>
