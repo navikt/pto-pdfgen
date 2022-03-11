@@ -10,10 +10,10 @@
     "navn": "NAVN NAVNESEN",
     "adresselinje1": "ADRESSELINJE 1",
     "adresselinje2": "ADRESSELINJE 2",
-    "adresselinje3": "ADRESSELINJE 3",
+    "adresselinje3": null,
     "postnummer": "0000",
     "poststed": "STED",
-    "land": "SVERIGE"
+    "land": null
   },
   "kontaktEnhetNavn": "Nav Kontaktenhet",
   "postadresse": {
