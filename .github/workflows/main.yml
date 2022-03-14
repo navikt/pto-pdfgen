@@ -40,7 +40,6 @@ jobs:
           CLUSTER: dev-fss
           RESOURCE: nais.yaml
           VAR: image=${{ env.IMAGE }}:${{ env.IMAGE_TAG }}
-          DRY_RUN: true
       - name: Create release
         uses: actions/create-release@v1
         env:
