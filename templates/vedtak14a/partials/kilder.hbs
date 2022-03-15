@@ -1,11 +1,14 @@
-<h3>Dette har vi lagt vekt på</h3>
-<p>
-    {{#eq malform "NN"}}
-        I vurderinga vår har vi lagt vekt på desse opplysningane:
-    {{/eq}}
-    {{#eq malform "NB"}}
-        I vurderingen vår har vi lagt vekt på disse opplysningene:
-    {{/eq}}
+<div class="avoid-page-break">
+    <h2>Dette har vi lagt vekt på</h2>
+    <p>
+        {{#eq malform "NN"}}
+            I vurderinga vår har vi lagt vekt på desse opplysningane:
+        {{/eq}}
+        {{#eq malform "NB"}}
+            I vurderingen vår har vi lagt vekt på disse opplysningene:
+        {{/eq}}
+    </p>
+</div>
 <ul>
     {{#each kilder}}
         <li>{{this}}</li>
@@ -31,9 +34,9 @@
         {{/eq}}
     {{/eq}}
     {{#eq malform "NN"}}
-        Du finn nokre av opplysningane vi har om deg, på nav.no/dittnav.
+        Du finn nokre av opplysningane vi har om deg, på <span class="lenke">nav.no/dittnav</span>.
     {{/eq}}
     {{#eq malform "NB"}}
-        Du finner noen av opplysningene vi har om deg på nav.no/dittnav.
+        Du finner noen av opplysningene vi har om deg på <span class="lenke">nav.no/dittnav</span>.
     {{/eq}}
 </p>

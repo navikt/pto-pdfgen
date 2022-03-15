@@ -1,9 +1,11 @@
 #!/bin/bash
 
 CURRENT_PATH="$(pwd)"
-PDFGEN_VERSION=72efbbafa20fb858d206894de67ae077876a9cc2
+PDFGEN_VERSION=d84f2a198a1b05af62b87ce994f0a23e22260bca
 
-docker pull navikt/pdfgen:$PDFGEN_VERSION
+# Legg til for debug: -e JAVA_OPTS='-Dlogback.configurationFile=logback-remote-debug.xml' \
+
+docker pull ghcr.io/navikt/pdfgen/pdfgen:$PDFGEN_VERSION
 docker run \
         -v $CURRENT_PATH/templates:/app/templates \
         -v $CURRENT_PATH/fonts:/app/fonts \

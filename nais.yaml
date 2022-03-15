@@ -1,0 +1,20 @@
+kind: Application
+apiVersion: nais.io/v1alpha1
+metadata:
+  name: pto-pdfgen
+  namespace: pto
+  labels:
+    team: pto
+spec:
+  image: {{image}}
+  port: 8080
+  liveness:
+    path: /is_alive
+  readiness:
+    path: /is_alive
+  prometheus:
+    enabled: true
+    path: /prometheus
+  replicas:
+    min: 1
+    max: 4

@@ -8,42 +8,60 @@
 </head>
 
 <body>
-<div class="main">
-    <div class="header">
+    <div class="main">
 
-        <div class="returadresse">
-            Returadresse,<br/>
-            {{kontaktEnhetNavn}}, {{returadresse.adresselinje}}, {{returadresse.postnummer}} {{returadresse.poststed}}
+        <div class="header">
+            <div class="nav-logo-container">
+                <img class="nav-logo" src="{{image "Navlogo.png"}}" />
+            </div>
+
+            <div class="header__info">
+                <div class="mottaker">
+                    <p style="margin: 0">
+                        {{mottaker.navn}}
+                        {{#if mottaker.adresselinje1}} <br/>{{mottaker.adresselinje1}}{{/if}}
+                        {{#if mottaker.adresselinje2}} <br/>{{mottaker.adresselinje2}}{{/if}}
+                        {{#if mottaker.adresselinje3}} <br/>{{mottaker.adresselinje3}}{{/if}}
+                        {{#if mottaker.postnummer}}
+                            <br/>{{mottaker.postnummer}} {{mottaker.poststed}}
+                        {{else}}
+                            {{#if mottaker.poststed}}
+                                <br/>{{mottaker.postnummer}} {{mottaker.poststed}}
+                            {{/if}}
+                        {{/if}}
+                        {{#if mottaker.land}} <br/>{{mottaker.land}}{{/if}}
+                    </p>
+                </div>
+                <div class="dato-og-unntatt">
+                    <p style="margin: 0">Dato: {{dato}}</p>
+                    <em class="unntatt-offentligheten" style="margin: 0">
+                        {{#eq malform "NN"}}
+                            Unntatt offentlegheita
+                        {{/eq}}
+                        {{#eq malform "NB"}}
+                            Unntatt offentligheten
+                        {{/eq}}
+                    </em>
+                </div>
+            </div>
         </div>
 
-        <div class="nav-logo-container">
-            <img class="nav-logo" src="{{image "Navlogo.png"}}">
-            {{#eq malform "NN"}}
-                <p>Unntatt offentleg innsyn etteroffentleglova § 13 første ledd og NAV-loven § 7</p>
-            {{/eq}}
-            {{#eq malform "NB"}}
-                <p>Unntatt offentlighet etter offentleglova § 13 første ledd og NAV-loven § 7</p>
-            {{/eq}}
+        <div class="innhold">
+            {{> @partial-block}}
         </div>
 
-        <div class="personalia">
-            <p>
-                {{mottaker.navn}}<br/>
-                {{mottaker.adresse.adresselinje1}}<br/>
-                {{mottaker.adresse.adresselinje2}}<br/>
-                {{mottaker.adresse.adresselinje3}}<br/>
-                {{mottaker.adresse.postnummer}} {{mottaker.adresse.poststed}}
-            </p>
-        </div>
-        <div class="dato">
-            <p>Dato: {{dato}}</p>
-        </div>
+        {{#if utkast}}
+            <div class="vannmerke-container">
+                 <span class="vannmerke">UTKAST</span>
+            </div>
+        {{/if}}
     </div>
-
-    <div class="innhold">
-        {{> @partial-block}}
+    <div class="footer">
+        <strong style="margin: 0">{{navKontor}}</strong>
+        <p style="margin: 0">Postadresse: {{kontaktEnhetNavn}} // {{postadresse.adresselinje}} // {{postadresse.postnummer}} {{postadresse.poststed}}</p>
+        <p style="margin: 0">Telefon: 55 55 33 33 // nav.no</p>
+        <p class="page-counter"/>
     </div>
-</div>
 </body>
 
 </html>
