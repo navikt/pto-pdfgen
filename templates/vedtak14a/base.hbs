@@ -2,44 +2,43 @@
 <html lang="no">
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     {{#block 'vedtak14a/partials/style' }}
     {{/block}}
 </head>
 
 <body>
     <div class="main">
-
         <div class="header">
             <div class="nav-logo-container">
-                <img class="nav-logo" src="{{image "Navlogo.png"}}" />
+                <img class="nav-logo" src="{{ image "Navlogo.min.svg" }}" alt="nav-logo" />
             </div>
 
             <div class="header__info">
                 <div class="mottaker">
                     <p style="margin: 0">
                         {{mottaker.navn}}
-                        {{#if mottaker.adresselinje1}} <br/>{{mottaker.adresselinje1}}{{/if}}
-                        {{#if mottaker.adresselinje2}} <br/>{{mottaker.adresselinje2}}{{/if}}
-                        {{#if mottaker.adresselinje3}} <br/>{{mottaker.adresselinje3}}{{/if}}
+                        {{#if mottaker.adresselinje1}} <br />{{mottaker.adresselinje1}}{{/if}}
+                        {{#if mottaker.adresselinje2}} <br />{{mottaker.adresselinje2}}{{/if}}
+                        {{#if mottaker.adresselinje3}} <br />{{mottaker.adresselinje3}}{{/if}}
                         {{#if mottaker.postnummer}}
-                            <br/>{{mottaker.postnummer}} {{mottaker.poststed}}
+                        <br />{{mottaker.postnummer}} {{mottaker.poststed}}
                         {{else}}
-                            {{#if mottaker.poststed}}
-                                <br/>{{mottaker.postnummer}} {{mottaker.poststed}}
-                            {{/if}}
+                        {{#if mottaker.poststed}}
+                        <br />{{mottaker.postnummer}} {{mottaker.poststed}}
                         {{/if}}
-                        {{#if mottaker.land}} <br/>{{mottaker.land}}{{/if}}
+                        {{/if}}
+                        {{#if mottaker.land}} <br />{{mottaker.land}}{{/if}}
                     </p>
                 </div>
                 <div class="dato-og-unntatt">
                     <p style="margin: 0">Dato: {{dato}}</p>
                     <em class="unntatt-offentligheten" style="margin: 0">
                         {{#eq malform "NN"}}
-                            Unntatt offentlegheita
+                        Unntatt offentlegheita
                         {{/eq}}
                         {{#eq malform "NB"}}
-                            Unntatt offentligheten
+                        Unntatt offentligheten
                         {{/eq}}
                     </em>
                 </div>
@@ -51,16 +50,17 @@
         </div>
 
         {{#if utkast}}
-            <div class="vannmerke-container">
-                 <span class="vannmerke">UTKAST</span>
-            </div>
+        <div class="vannmerke-container">
+            <span class="vannmerke">UTKAST</span>
+        </div>
         {{/if}}
     </div>
     <div class="footer">
         <strong style="margin: 0">{{navKontor}}</strong>
-        <p style="margin: 0">Postadresse: {{kontaktEnhetNavn}} // {{postadresse.adresselinje}} // {{postadresse.postnummer}} {{postadresse.poststed}}</p>
+        <p style="margin: 0">Postadresse: {{kontaktEnhetNavn}} // {{postadresse.adresselinje}} //
+            {{postadresse.postnummer}} {{postadresse.poststed}}</p>
         <p style="margin: 0">Telefon: 55 55 33 33 // nav.no</p>
-        <p class="page-counter"/>
+        <p class="page-counter" />
     </div>
 </body>
 
