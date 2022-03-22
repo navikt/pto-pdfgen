@@ -1,0 +1,4 @@
+resources_limits_cpu: 750m
+resources_limits_memory: 1Gi
+resources_requests_cpu: 500m
+resources_requests_memory: 512Mi
