@@ -38,8 +38,10 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-fss
-          RESOURCE: nais.yaml
+          RESOURCE: nais/nais.yaml
+          VARS: nais/vars-dev.yml
           VAR: image=${{ env.IMAGE }}:${{ env.IMAGE_TAG }}
+          DRY_RUN: true
       - name: Create release
         uses: actions/create-release@v1
         env:
@@ -62,7 +64,8 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-fss
-          RESOURCE: nais.yaml
+          RESOURCE: nais/nais.yaml
+          VARS: nais/vars-prod.yml
           VAR: image=${{ env.IMAGE }}:${{ env.IMAGE_TAG }}
       - name: Create release
         uses: actions/create-release@v1
