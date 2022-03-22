@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CURRENT_PATH="$(pwd)"
-PDFGEN_VERSION=1.4.3
+PDFGEN_VERSION=1.4.4
 
 # Legg til for debug: -e JAVA_OPTS='-Dlogback.configurationFile=logback-remote-debug.xml' \
 
