@@ -1,9 +1,9 @@
 #!/bin/bash
 
 CURRENT_PATH="$(pwd)"
-PDFGEN_VERSION=1.4.3
+PDFGEN_VERSION=1.4.6
 
-# Legg til for debug: -e JAVA_OPTS='-Dlogback.configurationFile=logback-remote-debug.xml' \
+# Legg til for debug: -e JDK_JAVA_OPTIONS \
 
 docker pull ghcr.io/navikt/pdfgen:$PDFGEN_VERSION
 docker run \
@@ -12,6 +12,7 @@ docker run \
         -v $CURRENT_PATH/data:/app/data \
         -p 8081:8080 \
         -e DISABLE_PDF_GET=false \
+        -e JDK_JAVA_OPTIONS \
         -it \
         --rm \
         ghcr.io/navikt/pdfgen:$PDFGEN_VERSION
