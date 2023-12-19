@@ -28,14 +28,7 @@
     </div>
 
     <div class="innhold">
-
-        {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if sistOppdatert}} <br /><label>Sist oppdatert: </label>{{sistOppdatert}}{{/if}}
-        <br />
-        {{#each object}}
-            {{@key}}: {{this}}
-        {{/each}}
-
+        {{jsonHelper items}}
     </div>
 </div>
 </body>
