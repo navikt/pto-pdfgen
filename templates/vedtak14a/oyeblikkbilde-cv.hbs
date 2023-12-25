@@ -11,7 +11,7 @@
 <div class="main">
     <div class="header">
         <div class="titel">
-            <h1>CV</h1>
+            <h1>CV {{personalia.fornavn}} - {{personalia.etternavn}}</h1>
         </div>
         <div class="nav-logo-container">
             <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg">
@@ -27,7 +27,10 @@
         </div>
     </div>
 
-    {{this}}
+    <div class="cv-innhold">
+        {{{this}}}
+    </div>
+
 </div>
 </body>
 
