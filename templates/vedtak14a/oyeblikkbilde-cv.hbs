@@ -27,16 +27,12 @@
         </div>
     </div>
 
-    <div class="innhold">
-
-        {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if sistOppdatert}} <br /><label>Sist oppdatert: </label>{{sistOppdatert}}{{/if}}
-        <br />
-        {{#each object}}
-            {{@key}}: {{this}}
-        {{/each}}
-
+    <div class="cv-innhold">
+        {{#if htmlView}}
+            {{htmlView}}
+        {{/if}}
     </div>
+
 </div>
 </body>
 
