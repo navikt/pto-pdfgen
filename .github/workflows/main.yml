@@ -2,7 +2,6 @@ name: Test, build, push and deploy
 on: push
 env:
   IMAGE_TAG: ${{ github.sha }}
-  IMAGE: ghcr.io/${{ github.repository }}/pto-pdfgen
   PRINT_PAYLOAD: true
 permissions:
   packages: write
@@ -12,21 +11,21 @@ jobs:
     name: Build and push
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    outputs:
+      image: ${{ steps.docker-build-push.outputs.image }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Docker login
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and push Docker image
-        uses: docker/build-push-action@v2
+        uses: nais/docker-build-push@v0
+        id: docker-build-push
         with:
-          context: .
-          push: true
-          tags: ${{ env.IMAGE }}:${{ env.IMAGE_TAG }}
+          team: pto
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
   deploy-dev:
     name: Deploy application to dev
@@ -36,6 +35,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Deploy application
         uses: nais/deploy/actions/deploy@v1
         env:
@@ -43,7 +43,7 @@ jobs:
           CLUSTER: dev-fss
           RESOURCE: nais/nais.yaml
           VARS: nais/vars-dev.yml
-          VAR: image=${{ env.IMAGE }}:${{ env.IMAGE_TAG }}
+          VAR: image=${{ needs.build-and-push.outputs.image }}
 
   deploy-prod:
     name: Deploy application to prod
@@ -53,6 +53,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Deploy application
         uses: nais/deploy/actions/deploy@v1
         env:
@@ -60,7 +61,8 @@ jobs:
           CLUSTER: prod-fss
           RESOURCE: nais/nais.yaml
           VARS: nais/vars-prod.yml
-          VAR: image=${{ env.IMAGE }}:${{ env.IMAGE_TAG }}
+          VAR: image=${{ needs.build-and-push.outputs.image }}
+
       - name: Create release
         uses: actions/create-release@v1
         env:
