@@ -9,12 +9,12 @@ spec:
   image: {{image}}
   port: 8080
   liveness:
-    path: /is_alive
+    path: /internal/is_alive
   readiness:
-    path: /is_alive
+    path: /internal/is_ready
   prometheus:
     enabled: true
-    path: /prometheus
+    path: /internal/prometheus
   replicas:
     min: 1
     max: 4
