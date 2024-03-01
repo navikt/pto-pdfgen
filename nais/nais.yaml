@@ -1,5 +1,5 @@
-kind: Application
-apiVersion: nais.io/v1alpha1
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
 metadata:
   name: pto-pdfgen
   namespace: pto
@@ -9,9 +9,9 @@ spec:
   image: {{image}}
   port: 8080
   liveness:
-    path: /internal/is_alive
+    path: /is_alive
   readiness:
-    path: /internal/is_ready
+    path: /is_alive
   prometheus:
     enabled: true
     path: /prometheus
