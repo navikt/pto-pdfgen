@@ -34,48 +34,9 @@
 
     <div class="innhold">
         {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if registrering.opprettetDato}} <br /><label>Oprettet dato: </label>{{iso_to_long_date registrering.opprettetDato}}{{/if}}
-        <br />
-        {{#if registrering.besvarelse}}
-            {{#if registrering.besvarelse.utdanning}} <br /><label>Utdanning: </label>{{registrering.besvarelse.utdanning}}{{/if}}
-            {{#if registrering.besvarelse.utdanningBestatt}} <br /><label>Utdanning bestått: </label>{{registrering.besvarelse.utdanningBestatt}}{{/if}}
-            {{#if registrering.besvarelse.utdanningGodkjent}} <br /><label>Utdanning godkjent: </label>{{registrering.besvarelse.utdanningGodkjent}}{{/if}}
-            {{#if registrering.besvarelse.helseHinder}} <br /><label>Helse hinder: </label>{{registrering.besvarelse.helseHinder}}{{/if}}
-            {{#if registrering.besvarelse.andreForhold}} <br /><label>Andre forhold: </label>{{registrering.besvarelse.andreForhold}}{{/if}}
-            {{#if registrering.besvarelse.sisteStilling}} <br /><label>Siste stilling: </label>{{registrering.besvarelse.sisteStilling}}{{/if}}
-            {{#if registrering.besvarelse.dinSituasjon}} <br /><label>Din situasjon: </label>{{registrering.besvarelse.dinSituasjon}}{{/if}}
-            {{#if registrering.besvarelse.fremtidigSituasjon}} <br /><label>Fremtidig situasjon: </label>{{registrering.besvarelse.fremtidigSituasjon}}{{/if}}
-            {{#if registrering.besvarelse.tilbakeIArbeid}} <br /><label>Tilbake i arbeid: </label>{{registrering.besvarelse.tilbakeIArbeid}}{{/if}}
-            <br />
+        {{#if htmlView}}
+            {{{htmlView}}}
         {{/if}}
-
-        {{#each registrering.teksterForBesvarelse}}
-            {{#if sporsmal}} <br /><label>Spørmål: </label>{{sporsmal}}{{/if}}
-            {{#if svar}} <br /><label>Svar: </label>{{svar}}{{/if}}
-            <br />
-        {{/each}}
-
-        {{#if registrering.sisteStilling}}
-            <label>Label: </label>{{registrering.sisteStilling.label}}
-            <br />
-        {{/if}}
-
-        {{#if registrering.profilering}}
-            <label>Innsatsgruppe: </label>{{registrering.profilering.innsatsgruppe}}
-            <br />
-            <label>Alder: </label>{{registrering.profilering.alder}}
-            <br />
-            <label>Jobbet sammenhengende seks av tolv siste måneder: </label>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}
-            <br />
-        {{/if}}
-
-        {{#if registrering.manueltRegistrertAv}}
-            <label>Registrert av ident: </label>{{registrering.manueltRegistrertAv.ident}}
-            <br />
-            <label>Enhet: </label>{{registrering.manueltRegistrertAv.enhet.navn}}
-            <br />
-        {{/if}}
-
     </div>
 </div>
 </body>
