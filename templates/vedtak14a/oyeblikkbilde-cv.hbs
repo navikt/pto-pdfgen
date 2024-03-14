@@ -15,7 +15,7 @@
 <div class="main">
     <div class="header">
         <div class="titel">
-            <h1>CV</h1>
+            <h1>CV-en/jobbønskene dine på nav.no</h1>
         </div>
         <div class="nav-logo-container">
             <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg" aria-label="NAV logo" aria-labelledby="logoTitle" role="img" >
@@ -33,6 +33,7 @@
     </div>
 
     <div class="cv-innhold">
+        {{#if ingenData}} <br />{{ingenData}}{{/if}}
         {{#if htmlView}}
             {{{htmlView}}}
         {{/if}}
