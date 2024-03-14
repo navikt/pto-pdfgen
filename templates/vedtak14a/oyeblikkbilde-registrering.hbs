@@ -34,7 +34,7 @@
 
     <div class="innhold">
         {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if registrering.opprettetDato}} <br /><label>Oprettet dato: </label>{{registrering.opprettetDato}}{{/if}}
+        {{#if registrering.opprettetDato}} <br /><label>Oprettet dato: </label>{{iso_to_long_date registrering.opprettetDato }}{{/if}}
         <br />
         {{#if registrering.besvarelse}}
             {{#if registrering.besvarelse.utdanning}} <br /><label>Utdanning: </label>{{registrering.besvarelse.utdanning}}{{/if}}
