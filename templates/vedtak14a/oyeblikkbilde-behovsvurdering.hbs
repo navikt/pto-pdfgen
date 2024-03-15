@@ -32,18 +32,11 @@
             </div>
         </div>
 
-        <div class="innhold">
-        {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if sistOppdatert}} <br /><label>Sist oppdatert: </label>{{sistOppdatert}}{{/if}}
-        <br />
-        {{#each svar}}
-            {{#if spm}} <br /><label>Spørsmål: </label>{{spm}}{{/if}}
-            {{#if svar}} <br /><label>Svar: </label>{{svar}}{{/if}}
-            {{#if oppfolging}} <br /><label>Oppfolging: </label>{{oppfolging}}{{/if}}
-            {{#if dialogId}} <br /><label>Dialog id: </label>{{dialogId}}{{/if}}
-            <br />
-        {{/each}}
-
+        <div class="cv-innhold">
+            {{#if ingenData}} <br />{{ingenData}}{{/if}}
+            {{#if htmlView}}
+                {{{htmlView}}}
+            {{/if}}
         </div>
     </div>
 </body>
