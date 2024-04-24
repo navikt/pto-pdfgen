@@ -34,7 +34,7 @@
     </div>
 
     <div class="cv-innhold">
-        {{#if ingenData}} <br/>{{ingenData}}{{/if}}
+        {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert CV/jobbønsker.{{/if}}
         {{#if sistEndret}} <br/><span class="json-key">Sist oppdatert:</span>{{iso_to_long_date sistEndret}}{{/if}}
         {{#if sammendrag}} <br/><span class="json-key">Sammendrag:</span>{{sammendrag}}{{/if}}
         {{#if utdanning}} <br/>

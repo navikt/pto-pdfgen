@@ -33,16 +33,27 @@
         </div>
 
         <div class="cv-innhold">
-            {{#if ingenData}} <br />{{ingenData}}{{/if}}
-            {{#if sistOppdatert}} <br /><label>Sist oppdatert: </label>{{iso_to_long_date sistOppdatert}}{{/if}}
+            {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert svar om behov for veiledning.{{/if}}
+
+            {{#if sistOppdatert}}
+                <div class="json-key-wrapper">
+                    <span class="json-key">Sist oppdatert: </span><span>{{iso_to_long_date sistOppdatert}}</span>
+                </div>
+            {{/if}}
             <br />
-            {{#each svar}}
-                {{#if spm}} <br /><label>Spørsmål: </label>{{spm}}{{/if}}
-                {{#if svar}} <br /><label>Svar: </label>{{svar}}{{/if}}
-                {{#if oppfolging}} <br /><label>Oppfolging: </label>{{oppfolging}}{{/if}}
-                {{#if dialogId}} <br /><label>Dialog id: </label>{{dialogId}}{{/if}}
-                <br />
-            {{/each}}
+            <div class="json-array-wrapper">
+                <h3 class="json-key">Svar</h3>
+                <ul class="json-array">
+                    {{#each svar}}
+                        <li class="key-wrapper">
+                            {{#if spm}}<div class="json-key-wrapper"><span class="json-key">Spørsmål: </span><span>{{spm}}</span></div>{{/if}}
+                            {{#if svar}}<div class="json-key-wrapper"><span class="json-key">Svar: </span><span>{{svar}}</span></div>{{/if}}
+                            {{#if dialogId}}<div class="json-key-wrapper"><span class="json-key">DialogId: </span><span>{{dialogId}}</span></div>{{/if}}
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
     </div>
 </body>

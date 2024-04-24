@@ -1,13 +1,12 @@
 {
   "registrering": {
-    "id": 10004240,
-    "opprettetDato": "2023-06-22T16:47:18.325956+02:00",
+    "opprettetDato": "2024-02-01T10:38:34.065332+01:00",
     "besvarelse": {
       "utdanning": "HOYERE_UTDANNING_5_ELLER_MER",
       "utdanningBestatt": "JA",
       "utdanningGodkjent": "JA",
       "helseHinder": "NEI",
-      "andreForhold": "NEI",
+      "andreForhold": "JA",
       "sisteStilling": "INGEN_SVAR",
       "dinSituasjon": "MISTET_JOBBEN",
       "fremtidigSituasjon": null,
@@ -37,7 +36,7 @@
       {
         "sporsmalId": "andreForhold",
         "sporsmal": "Har du andre problemer med å søke eller være i jobb?",
-        "svar": "Nei"
+        "svar": "Ja"
       },
       {
         "sporsmalId": "sisteStilling",
@@ -56,17 +55,12 @@
       "styrk08": "-1"
     },
     "profilering": {
-      "innsatsgruppe": "SITUASJONSBESTEMT_INNSATS",
-      "alder": 28,
+      "innsatsgruppe": "BEHOV_FOR_ARBEIDSEVNEVURDERING",
+      "alder": 33,
       "jobbetSammenhengendeSeksAvTolvSisteManeder": false
     },
-    "manueltRegistrertAv": {
-      "ident": "Z990123",
-      "enhet": {
-        "id": "0104",
-        "navn": "NAV Moss"
-      }
-    }
-  },
-  "type": "ORDINAER"
+    "manueltRegistrertAv": null,
+    "endretAv": null,
+    "endretTidspunkt": null
+  }
 }

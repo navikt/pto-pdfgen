@@ -33,48 +33,76 @@
     </div>
 
     <div class="innhold">
-        {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if registrering.opprettetDato}} <br /><label>Oprettet dato: </label>{{iso_to_long_date registrering.opprettetDato}}{{/if}}
-        <br />
-        {{#if registrering.besvarelse}}
-            {{#if registrering.besvarelse.utdanning}} <br /><label>Utdanning: </label>{{registrering.besvarelse.utdanning}}{{/if}}
-            {{#if registrering.besvarelse.utdanningBestatt}} <br /><label>Utdanning bestått: </label>{{registrering.besvarelse.utdanningBestatt}}{{/if}}
-            {{#if registrering.besvarelse.utdanningGodkjent}} <br /><label>Utdanning godkjent: </label>{{registrering.besvarelse.utdanningGodkjent}}{{/if}}
-            {{#if registrering.besvarelse.helseHinder}} <br /><label>Helse hinder: </label>{{registrering.besvarelse.helseHinder}}{{/if}}
-            {{#if registrering.besvarelse.andreForhold}} <br /><label>Andre forhold: </label>{{registrering.besvarelse.andreForhold}}{{/if}}
-            {{#if registrering.besvarelse.sisteStilling}} <br /><label>Siste stilling: </label>{{registrering.besvarelse.sisteStilling}}{{/if}}
-            {{#if registrering.besvarelse.dinSituasjon}} <br /><label>Din situasjon: </label>{{registrering.besvarelse.dinSituasjon}}{{/if}}
-            {{#if registrering.besvarelse.fremtidigSituasjon}} <br /><label>Fremtidig situasjon: </label>{{registrering.besvarelse.fremtidigSituasjon}}{{/if}}
-            {{#if registrering.besvarelse.tilbakeIArbeid}} <br /><label>Tilbake i arbeid: </label>{{registrering.besvarelse.tilbakeIArbeid}}{{/if}}
-                <br />
-        {{/if}}
+        <h3 class="json-key">Registrering</h3>
+        <div class="json-obj">
+            {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert noen svar.{{/if}}
+            {{#if registrering.opprettetDato}}
+                <div class="json-key-wrapper"><span class="json-key">Opprettet dato: </span><span>{{iso_to_long_date registrering.opprettetDato}}</span></div>
+            {{/if}}
+            <br />
 
-        {{#each registrering.teksterForBesvarelse}}
-            {{#if sporsmal}} <br /><label>Spørmål: </label>{{sporsmal}}{{/if}}
-            {{#if svar}} <br /><label>Svar: </label>{{svar}}{{/if}}
-                <br />
-        {{/each}}
+            {{#if registrering.besvarelse}}
+                <h3 class="json-key">Besvarelse</h3>
+                <div class="json-obj">
+                    {{#if registrering.besvarelse.utdanning}} <div class="json-key-wrapper"><span class="json-key">Utdanning: </span><span>{{registrering.besvarelse.utdanning}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.utdanningBestatt}} <div class="json-key-wrapper"><span class="json-key">Utdanning bestått: </span><span>{{registrering.besvarelse.utdanningBestatt}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.utdanningGodkjent}} <div class="json-key-wrapper"><span class="json-key">Utdanning godkjent: </span><span>{{registrering.besvarelse.utdanningGodkjent}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.helseHinder}} <div class="json-key-wrapper"><span class="json-key">Helse hinder: </span><span>{{registrering.besvarelse.helseHinder}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.andreForhold}} <div class="json-key-wrapper"><span class="json-key">Andre forhold:: </span><span>{{registrering.besvarelse.andreForhold}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.sisteStilling}} <div class="json-key-wrapper"><span class="json-key">Siste stilling: </span><span>{{registrering.besvarelse.sisteStilling}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.dinSituasjon}} <div class="json-key-wrapper"><span class="json-key">Din situasjon:: </span><span>{{registrering.besvarelse.dinSituasjon}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.fremtidigSituasjon}} <div class="json-key-wrapper"><span class="json-key">Fremtidig situasjon: </span><span>{{registrering.besvarelse.fremtidigSituasjon}}</span></div>{{/if}}
+                    {{#if registrering.besvarelse.tilbakeIArbeid}} <div class="json-key-wrapper"><span class="json-key">Tilbake i arbeid: </span><span>{{registrering.besvarelse.tilbakeIArbeid}}</span></div>{{/if}}
+                </div>
+            {{/if}}
 
-        {{#if registrering.sisteStilling}}
-                <label>Label: </label>{{registrering.sisteStilling.label}}
-                <br />
-        {{/if}}
 
-        {{#if registrering.profilering}}
-                <label>Innsatsgruppe: </label>{{registrering.profilering.innsatsgruppe}}
-                <br />
-                <label>Alder: </label>{{registrering.profilering.alder}}
-                <br />
-                <label>Jobbet sammenhengende seks av tolv siste måneder: </label>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}
-                <br />
-        {{/if}}
+            {{#if registrering.teksterForBesvarelse}}
+                <div class="json-array-wrapper">
+                    <h3 class="json-key">Tekster for besvarelse</h3>
+                    <ul class="json-array">
+                    {{#each registrering.teksterForBesvarelse}}
+                         <li>
+                            <div class="json-key-wrapper"><span class="json-key">Spørsmål: </span><span>{{sporsmal}}</span></div>
+                            <div class="json-key-wrapper"><span class="json-key">Svar: </span><span>{{svar}}</span></div></li>
+                         </li>
+                    {{/each}}
+                    </ul>
+                </div>
+            {{/if}}
 
-        {{#if registrering.manueltRegistrertAv}}
-                <label>Registrert av ident: </label>{{registrering.manueltRegistrertAv.ident}}
-                <br />
-                <label>Enhet: </label>{{registrering.manueltRegistrertAv.enhet.navn}}
-                <br />
-        {{/if}}
+
+            {{#if registrering.sisteStilling}}
+                <h3 class="json-key">Siste stilling</h3>
+                <div class="json-obj"><div class="json-key-wrapper"><span class="json-key">Stilling: </span><span>{{registrering.sisteStilling.label}}</span></div></div>
+            {{/if}}
+
+            {{#if registrering.profilering}}
+                    <h3 class="json-key">Profilering</h3>
+                    <div class="json-obj">
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Innsatsgruppe: </span><span>{{registrering.profilering.innsatsgruppe}}</span>
+                        </div>
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Alder: </span><span>{{registrering.profilering.alder}}</span>
+                        </div>
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Jobbet sammenhengende seks av tolv siste måneder: </span><span>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}</span>
+                        </div>
+                    </div>
+            {{/if}}
+
+            {{#if registrering.manueltRegistrertAv}}
+                <div class="json-obj">
+                    <div class="json-key-wrapper">
+                        <span class="json-key">Registrert av ident: </span><span>{{registrering.manueltRegistrertAv.ident}}</span>
+                    </div>
+                    <div class="json-key-wrapper">
+                        <span class="json-key">Enhet: </span><span>{{registrering.manueltRegistrertAv.enhet.navn}}</span>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
     </div>
 </div>
 </body>
