@@ -37,7 +37,8 @@
 
             {{#if sistOppdatert}}
                 <div class="json-key-wrapper">
-                    <span class="json-key">Sist oppdatert: </span><span>{{iso_to_long_date sistOppdatert}}</span>
+                    <span class="json-key">Sist oppdatert: </span>
+                    <span>{{iso_to_long_date sistOppdatert}}</span>
                 </div>
             {{/if}}
 
@@ -46,10 +47,25 @@
                     <h3 class="json-key">Svar</h3>
                     <ul class="json-array">
                         {{#each svar}}
-                            <li class="key-wrapper">
-                                {{#if spm}}<div class="json-key-wrapper"><span class="json-key">Spørsmål: </span><span>{{spm}}</span></div>{{/if}}
-                                {{#if svar}}<div class="json-key-wrapper"><span class="json-key">Svar: </span><span>{{svar}}</span></div>{{/if}}
-                                {{#if dialogId}}<div class="json-key-wrapper"><span class="json-key">DialogId: </span><span>{{dialogId}}</span></div>{{/if}}
+                            <li>
+                                {{#if spm}}
+                                    <div class="json-key-wrapper">
+                                        <span class="json-key">Spørsmål: </span>
+                                        <span>{{spm}}</span>
+                                    </div>
+                                {{/if}}
+                                {{#if svar}}
+                                    <div class="json-key-wrapper">
+                                        <span class="json-key">Svar: </span>
+                                        <span>{{svar}}</span>
+                                    </div>
+                                {{/if}}
+                                {{#if dialogId}}
+                                    <div class="json-key-wrapper">
+                                        <span class="json-key">DialogId: </span>
+                                        <span>{{dialogId}}</span>
+                                    </div>
+                                {{/if}}
                             </li>
                         {{/each}}
                     </ul>
