@@ -33,10 +33,8 @@
     </div>
 
     <div class="innhold">
-        <h3 class="json-key">Registrering</h3>
+        {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert noen svar.{{/if}}
         <div class="json-obj">
-            {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert noen svar.{{/if}}
-
             {{#if registrering.opprettetDato}}
                 <div class="json-key-wrapper"><span class="json-key">Opprettet dato: </span><span>{{iso_to_long_date registrering.opprettetDato}}</span></div>
             {{/if}}
