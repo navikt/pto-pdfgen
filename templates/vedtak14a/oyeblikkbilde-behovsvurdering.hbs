@@ -40,7 +40,8 @@
                     <span class="json-key">Sist oppdatert: </span><span>{{iso_to_long_date sistOppdatert}}</span>
                 </div>
             {{/if}}
-            <br />
+
+            {{#if svar}}
             <div class="json-array-wrapper">
                 <h3 class="json-key">Svar</h3>
                 <ul class="json-array">
@@ -54,6 +55,7 @@
                     {{/each}}
                 </ul>
             </div>
+            {{/if}}
         </div>
     </div>
 </body>
