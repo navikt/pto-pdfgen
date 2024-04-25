@@ -33,7 +33,6 @@
     </div>
 
     <div class="innhold">
-        {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert noen svar. {{/if}}
         {{#if registrering}}
             <div class="json-obj">
                 {{#if registrering.opprettetDato}}
@@ -125,6 +124,8 @@
                     </div>
                 {{/if}}
             </div>
+        {{else}}
+            <b>Ingen registrerte data:</b> Personen har ikke registrert noen svar.
         {{/if}}
     </div>
 </div>

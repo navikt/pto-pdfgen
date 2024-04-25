@@ -33,16 +33,12 @@
         </div>
 
         <div class="innhold">
-            {{#if ingenData}} <b>Ingen registrerte data:</b> Personen har ikke registrert svar om behov for veiledning.{{/if}}
-
             {{#if sistOppdatert}}
                 <div class="json-key-wrapper">
                     <span class="json-key">Sist oppdatert: </span>
                     <span>{{iso_to_long_date sistOppdatert}}</span>
                 </div>
-            {{/if}}
 
-            {{#if svar}}
                 <div class="json-array-wrapper">
                     <h3 class="json-key">Svar</h3>
                     <ul class="json-array">
@@ -70,6 +66,8 @@
                         {{/each}}
                     </ul>
                 </div>
+            {{else}}
+                <b>Ingen registrerte data:</b> Personen har ikke registrert svar om behov for veiledning.
             {{/if}}
         </div>
     </div>
