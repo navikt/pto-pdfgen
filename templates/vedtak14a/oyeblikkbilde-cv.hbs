@@ -35,7 +35,7 @@
 
     <div class="innhold">
         {{#if sistEndret}}
-            <br/><span class="json-key">Sist oppdatert:</span>{{iso_to_long_date sistEndret}}
+            <span class="json-key">Sist oppdatert:</span>{{iso_to_long_date sistEndret}}
             {{#if sammendrag}} <br/><span class="json-key">Sammendrag:</span>{{sammendrag}}{{/if}}
             {{#if utdanning}} <br/>
                 <h3 class="json-key">Utdanning</h3>
@@ -187,7 +187,7 @@
                         <li>
                             {{#if sprak}}
                                 <div class="json-key-wrapper">
-                                    <span class="json-key">Sprak:</span>
+                                    <span class="json-key">Språk:</span>
                                     <span>{{sprak}}</span>
                                 </div>
                             {{/if}}
@@ -221,7 +221,7 @@
                 <ul class="json-array">
                     {{#each kurs}}
                         <li>
-                            {{#if sprak}}
+                            {{#if tittel}}
                                 <div class="json-key-wrapper">
                                     <span class="json-key">Tittel:</span>
                                     <span>{{tittel}}</span>
