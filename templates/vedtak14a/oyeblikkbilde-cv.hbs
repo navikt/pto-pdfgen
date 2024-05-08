@@ -180,6 +180,129 @@
                 </ul>
             {{/if}}
 
+            {{#if jobbprofil.onsketYrke}} <br/>
+                <h3 class="json-key">Ønsket yrke</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketYrke}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidssted}} <br/>
+                <h3 class="json-key">Ønsket arbeidssted</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidssted}}
+                        <li>
+                            {{#if stedsnavn}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Stedsnavn:</span>
+                                    <span>{{stedsnavn}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketAnsettelsesform}} <br/>
+                <h3 class="json-key">Ønsket ansettelsesform</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketAnsettelsesform}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidstidsordning}} <br/>
+                <h3 class="json-key">Ønsket arbeidstidsordning</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidstidsordning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidsdagordning}} <br/>
+                <h3 class="json-key">Ønsket arbeidsdagordning</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidsdagordning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidsskiftordning}} <br/>
+                <h3 class="json-key">Ønsket arbeidsskiftordning</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidsskiftordning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidsskiftordning}} <br/>
+                <h3 class="json-key">Heltid eller deltid</h3>
+                <ul class="json-array">
+                    <li>
+                        {{#if jobbprofil.onsketArbeidsskiftordning.heltid}}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Heltid:</span>
+                                <span>Ja</span>
+                            </div>
+                            <br/>
+                        {{/if}}
+                        {{#if jobbprofil.onsketArbeidsskiftordning.deltid}}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Deltid:</span>
+                                <span>Ja</span>
+                            </div>
+                        {{/if}}
+                    </li>
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.oppstart}} <br/>
+                <h3 class="json-key">Oppstart</h3>
+                <span class="json-key">Oppstart:</span>
+                <span>{{ jobbprofil.oppstart }}</span>
+            {{/if}}
+
             {{#if sprak}} <br/>
                 <h3 class="json-key">Språk</h3>
                 <ul class="json-array">
