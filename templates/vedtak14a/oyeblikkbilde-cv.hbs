@@ -299,8 +299,13 @@
 
             {{#if jobbprofil.oppstart}} <br/>
                 <h3 class="json-key">Oppstart</h3>
-                <span class="json-key">Oppstart:</span>
-                <span>{{ jobbprofil.oppstart }}</span>
+                 <ul class="json-array">
+                    <li>
+                        <span class="json-key">Oppstart:</span>
+                        <span>{{ jobbprofil.oppstart }}</span>
+                    </li>
+                 </ul>
+
             {{/if}}
 
             {{#if sprak}} <br/>
