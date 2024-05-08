@@ -162,10 +162,12 @@
                                 <span class="json-key">Alder: </span>
                                 <span>{{registrering.profilering.alder}}</span>
                             </div>
-                            <div class="json-key-wrapper">
-                                <span class="json-key">Jobbet sammenhengende seks av tolv siste måneder: </span>
-                                <span>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}</span>
-                            </div>
+                            {{#if profilering.jobbetSammenhengendeSeksAvTolvSisteManeder }}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Jobbet sammenhengende seks av tolv siste måneder: </span>
+                                    <span>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}</span>
+                                </div>
+                            {{/if}}
                         </div>
                 {{/if}}
 
