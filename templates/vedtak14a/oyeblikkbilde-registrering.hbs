@@ -33,49 +33,160 @@
     </div>
 
     <div class="innhold">
-        {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if registrering.opprettetDato}} <br /><label>Oprettet dato: </label>{{iso_to_long_date registrering.opprettetDato }}{{/if}}
-        <br />
-        {{#if registrering.besvarelse}}
-            {{#if registrering.besvarelse.utdanning}} <br /><label>Utdanning: </label>{{registrering.besvarelse.utdanning}}{{/if}}
-            {{#if registrering.besvarelse.utdanningBestatt}} <br /><label>Utdanning bestått: </label>{{registrering.besvarelse.utdanningBestatt}}{{/if}}
-            {{#if registrering.besvarelse.utdanningGodkjent}} <br /><label>Utdanning godkjent: </label>{{registrering.besvarelse.utdanningGodkjent}}{{/if}}
-            {{#if registrering.besvarelse.helseHinder}} <br /><label>Helse hinder: </label>{{registrering.besvarelse.helseHinder}}{{/if}}
-            {{#if registrering.besvarelse.andreForhold}} <br /><label>Andre forhold: </label>{{registrering.besvarelse.andreForhold}}{{/if}}
-            {{#if registrering.besvarelse.sisteStilling}} <br /><label>Siste stilling: </label>{{registrering.besvarelse.sisteStilling}}{{/if}}
-            {{#if registrering.besvarelse.dinSituasjon}} <br /><label>Din situasjon: </label>{{registrering.besvarelse.dinSituasjon}}{{/if}}
-            {{#if registrering.besvarelse.fremtidigSituasjon}} <br /><label>Fremtidig situasjon: </label>{{registrering.besvarelse.fremtidigSituasjon}}{{/if}}
-            {{#if registrering.besvarelse.tilbakeIArbeid}} <br /><label>Tilbake i arbeid: </label>{{registrering.besvarelse.tilbakeIArbeid}}{{/if}}
-            <br />
+        {{#if registrering}}
+            <div class="json-obj">
+                {{#if registrering.opprettetDato}}
+                    <div class="json-key-wrapper"><span class="json-key">Opprettet dato: </span><span>{{iso_to_long_date registrering.opprettetDato}}</span></div>
+                {{/if}}
+
+                {{#if registrering.besvarelse}}
+                    <h3 class="json-key">Besvarelse</h3>
+                    <div class="json-obj">
+                        {{#if registrering.besvarelse.utdanning}}
+                            <div class="json-key-wrapper"><span class="json-key">Hva er din høyeste fullførte utdanning? </span>
+                            <span>
+                            {{#eq registrering.besvarelse.utdanning "INGEN_UTDANNING"}} Ingen utdanning {{/eq}}
+                            {{#eq registrering.besvarelse.utdanning "GRUNNSKOLE"}} Grunnskole {{/eq}}
+                            {{#eq registrering.besvarelse.utdanning "VIDEREGAENDE_GRUNNUTDANNING"}} Videregående grunnutdanning (1 til 2 år) {{/eq}}
+                            {{#eq registrering.besvarelse.utdanning "VIDEREGAENDE_FAGBREV_SVENNEBREV"}} Videregående, fagbrev eller svennebrev (3 år eller mer) {{/eq}}
+                            {{#eq registrering.besvarelse.utdanning "HOYERE_UTDANNING_1_TIL_4"}} Høyere utdanning (1 til 4 år) {{/eq}}
+                            {{#eq registrering.besvarelse.utdanning "HOYERE_UTDANNING_5_ELLER_MER"}} Høyere utdanning (5 år eller mer) {{/eq}}
+                            </span>
+                            </div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.utdanningBestatt}}
+                            <div class="json-key-wrapper"><span class="json-key">Er utdanningen din bestått? </span><span>
+                            {{#eq registrering.besvarelse.utdanningBestatt "JA"}} Ja {{/eq}}
+                            {{#eq registrering.besvarelse.utdanningBestatt "NEI"}} Nei {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.utdanningGodkjent}}
+                            <div class="json-key-wrapper"><span class="json-key">Er utdanningen din godkjent i Norge? </span><span>
+                            {{#eq registrering.besvarelse.utdanningGodkjent "JA"}} Ja {{/eq}}
+                            {{#eq registrering.besvarelse.utdanningGodkjent "NEI"}} Nei {{/eq}}
+                            {{#eq registrering.besvarelse.utdanningGodkjent "VET_IKKE"}} Vet ikke {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.helseHinder}}
+                            <div class="json-key-wrapper"><span class="json-key">Har du helseproblemer som hindrer deg i å søke eller være i jobb? </span><span>
+                            {{#eq registrering.besvarelse.helseHinder "JA"}} Ja {{/eq}}
+                            {{#eq registrering.besvarelse.helseHinder "NEI"}} Nei {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.andreForhold}}
+                            <div class="json-key-wrapper"><span class="json-key">Har du andre problemer med å søke eller være i jobb? </span><span>
+                            {{#eq registrering.besvarelse.andreForhold "JA"}} Ja {{/eq}}
+                            {{#eq registrering.besvarelse.andreForhold "NEI"}} Nei {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.sisteStilling}}
+                            <div class="json-key-wrapper"><span class="json-key">Hva er din siste jobb? </span><span>
+                            {{#eq registrering.besvarelse.sisteStilling "HAR_HATT_JOBB"}} Har vært i jobb {{/eq}}
+                            {{#eq registrering.besvarelse.sisteStilling "HAR_IKKE_HATT_JOBB"}} Har ikke vært i jobb {{/eq}}
+                            {{#eq registrering.besvarelse.sisteStilling "INGEN_SVAR"}} Ikke besvart {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.dinSituasjon}}
+                            <div class="json-key-wrapper"><span class="json-key">Hvilken jobbsituasjon passer best? </span><span>
+                            {{#eq registrering.besvarelse.dinSituasjon "MISTET_JOBBEN"}} Har mistet eller kommer til å miste jobben {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "HAR_SAGT_OPP"}} Har sagt opp eller kommer til å si opp {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "DELTIDSJOBB_VIL_MER"}} Har deltidsjobb, men vil jobbe mer {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "ALDRI_HATT_JOBB"}} Har aldri vært i jobb {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "VIL_BYTTE_JOBB"}} Har jobb, men vil bytte {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "JOBB_OVER_2_AAR"}} Har ikke vært i jobb de siste 2 årene {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "ER_PERMITTERT"}} Er permittert eller kommer til å bli permittert {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "USIKKER_JOBBSITUASJON"}} Er usikker på jobbsituasjonen min {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "AKKURAT_FULLFORT_UTDANNING"}} Har akkurat fullført utdanning, militærtjeneste eller annet {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "VIL_FORTSETTE_I_JOBB"}} Har jobb og ønsker å fortsette i den jobben jeg er i {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "OPPSIGELSE"}} Jeg har blitt sagt opp av arbeidsgiver {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "ENDRET_PERMITTERINGSPROSENT"}} Arbeidsgiver har endret permitteringen min {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "TILBAKE_TIL_JOBB"}} Jeg skal tilbake i jobb hos min nåværende arbeidsgiver {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "NY_JOBB"}} Jeg skal begynne å jobbe hos en annen arbeidsgiver {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "MIDLERTIDIG_JOBB"}} Jeg har fått midlertidig jobb hos en annen arbeidsgiver {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "KONKURS"}} Arbeidsgiveren min er konkurs {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "SAGT_OPP"}} Jeg har sagt opp jobben min {{/eq}}
+                            {{#eq registrering.besvarelse.dinSituasjon "ANNET"}} Situasjonen min har endret seg, men ingen av valgene passet {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.fremtidigSituasjon}}
+                            <div class="json-key-wrapper"><span class="json-key">Hva tenker du om din fremtidige situasjon? </span><span>
+                            {{#eq registrering.besvarelse.fremtidigSituasjon "SAMME_ARBEIDSGIVER"}} Jeg skal tilbake til jobben jeg har {{/eq}}
+                            {{#eq registrering.besvarelse.fremtidigSituasjon "SAMME_ARBEIDSGIVER_NY_STILLING"}} Jeg skal tilbake til arbeidsgiveren min, men i ny stilling {{/eq}}
+                            {{#eq registrering.besvarelse.fremtidigSituasjon "NY_ARBEIDSGIVER"}} Jeg trenger ny jobb {{/eq}}
+                            {{#eq registrering.besvarelse.fremtidigSituasjon "USIKKER"}} Jeg er usikker {{/eq}}
+                            {{#eq registrering.besvarelse.fremtidigSituasjon "INGEN_PASSER"}} Ingen av disse alternativene passer {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if registrering.besvarelse.tilbakeIArbeid}}
+                            <div class="json-key-wrapper"><span class="json-key">Tror du at du kommer tilbake i jobb før du har vært sykmeldt i 52 uker? </span><span>
+                            {{#eq registrering.besvarelse.tilbakeIArbeid "JA_FULL_STILLING"}} Ja, i full stilling {{/eq}}
+                            {{#eq registrering.besvarelse.tilbakeIArbeid "JA_REDUSERT_STILLING"}} Ja, i redusert stilling {{/eq}}
+                            {{#eq registrering.besvarelse.tilbakeIArbeid "USIKKER"}} Usikker {{/eq}}
+                            {{#eq registrering.besvarelse.tilbakeIArbeid "NEI"}} Nei {{/eq}}
+                            </span></div>
+                        {{/if}}
+                    </div>
+                {{/if}}
+
+
+                {{#if registrering.teksterForBesvarelse}}
+                    <div class="json-array-wrapper">
+                        <h3 class="json-key">Tekster for besvarelse</h3>
+                        <ul class="json-array">
+                        {{#each registrering.teksterForBesvarelse}}
+                             <li>
+                                <div class="json-key-wrapper"><span class="json-key">Spørsmål: </span><span>{{sporsmal}}</span></div>
+                                <div class="json-key-wrapper"><span class="json-key">Svar: </span><span>{{svar}}</span></div>
+                             </li>
+                        {{/each}}
+                        </ul>
+                    </div>
+                {{/if}}
+
+
+                {{#if registrering.sisteStilling}}
+                    <h3 class="json-key">Siste stilling</h3>
+                    <div class="json-obj"><div class="json-key-wrapper"><span class="json-key">Stilling: </span><span>{{registrering.sisteStilling.label}}</span></div></div>
+                {{/if}}
+
+                {{#if registrering.profilering}}
+                        <h3 class="json-key">Profilering</h3>
+                        <div class="json-obj">
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Innsatsgruppe: </span>
+                                {{#eq registrering.profilering.innsatsgruppe "STANDARD_INNSATS"}} Standard innsats {{/eq}}
+                                {{#eq registrering.profilering.innsatsgruppe "SITUASJONSBESTEMT_INNSATS"}} Situasjonsbestemt innsats {{/eq}}
+                                {{#eq registrering.profilering.innsatsgruppe "BEHOV_FOR_ARBEIDSEVNEVURDERING"}} Behov for arbeidsevnevurdering {{/eq}}
+                            </div>
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Alder: </span>
+                                <span>{{registrering.profilering.alder}}</span>
+                            </div>
+                            {{#if profilering.jobbetSammenhengendeSeksAvTolvSisteManeder }}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Jobbet sammenhengende seks av tolv siste måneder: </span>
+                                    <span>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}</span>
+                                </div>
+                            {{/if}}
+                        </div>
+                {{/if}}
+
+                {{#if registrering.manueltRegistrertAv}}
+                    <div class="json-obj">
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Registrert av ident: </span>
+                            <span>{{registrering.manueltRegistrertAv.ident}}</span>
+                        </div>
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Enhet: </span>
+                            <span>{{registrering.manueltRegistrertAv.enhet.navn}}</span>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        {{else}}
+            <b>Ingen registrerte data:</b> Personen har ikke registrert noen svar.
         {{/if}}
-
-        {{#each registrering.teksterForBesvarelse}}
-            {{#if sporsmal}} <br /><label>Spørmål: </label>{{sporsmal}}{{/if}}
-            {{#if svar}} <br /><label>Svar: </label>{{svar}}{{/if}}
-            <br />
-        {{/each}}
-
-        {{#if registrering.sisteStilling}}
-            <label>Label: </label>{{registrering.sisteStilling.label}}
-            <br />
-        {{/if}}
-
-        {{#if registrering.profilering}}
-            <label>Innsatsgruppe: </label>{{registrering.profilering.innsatsgruppe}}
-            <br />
-            <label>Alder: </label>{{registrering.profilering.alder}}
-            <br />
-            <label>Jobbet sammenhengende seks av tolv siste måneder: </label>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}
-            <br />
-        {{/if}}
-
-        {{#if registrering.manueltRegistrertAv}}
-            <label>Registrert av ident: </label>{{registrering.manueltRegistrertAv.ident}}
-            <br />
-            <label>Enhet: </label>{{registrering.manueltRegistrertAv.enhet.navn}}
-            <br />
-        {{/if}}
-
     </div>
 </div>
 </body>

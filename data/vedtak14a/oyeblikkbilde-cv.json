@@ -1,1 +1,179 @@
-{"htmlView":"<div class='oyblikksbilde-visning__json-visning'><div class='json-key-wrapper'><span class='json-key'>Sammendrag: </span><span>Trivelig person med kjærlighet for sau, som har tonnevis med allsidig kompetanse og fantastiske personlige egenskaper.</span></div><div class='json-array-wrapper'><h3 class='json-key'>Utdanning</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-array-wrapper'><h3 class='json-key'>Forerkort</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Klasse: </span><span>C</span></div></li></ul></div><div class='json-array-wrapper'><h3 class='json-key'>Arbeidserfaring</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div><h3 class='json-key'>Jobbprofil</h3><div class='json-obj'><div class='json-array-wrapper'><h3 class='json-key'>Onsket arbeidsskiftordning</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-key-wrapper'><span class='json-key'>Oppstart: </span><span>LEDIG_NAA</span></div><div class='json-array-wrapper'><h3 class='json-key'>Kompetanse</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-key-wrapper'><span class='json-key'>Sist endret: </span><span>2023-12-06T10:47:51.5374+01:00</span></div><div class='json-array-wrapper'><h3 class='json-key'>Onsket arbeidsdagordning</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>UKEDAGER</span></div></li></ul></div><div class='json-array-wrapper'><h3 class='json-key'>Onsket arbeidstidsordning</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>DAGTID</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>KVELD</span></div></li></ul></div><div class='json-array-wrapper'><h3 class='json-key'>Onsket ansettelsesform</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>FAST</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>PROSJEKT</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>FERIEJOBB</span></div></li></ul></div><div class='json-array-wrapper'><h3 class='json-key'>Onsket arbeidssted</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Stedsnavn: </span><span>Lørenskog</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Stedsnavn: </span><span>Oslo</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Stedsnavn: </span><span>Fredrikstad</span></div></li></ul></div><div><h3 class='json-key'>Heltid deltid</h3><div class='json-obj'><div class='json-key-wrapper'><span class='json-key'>Deltid: </span><span>Nei</span></div><div class='json-key-wrapper'><span class='json-key'>Heltid: </span><span>Ja</span></div></div></div><div class='json-array-wrapper'><h3 class='json-key'>Onsket yrke</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>Frisør</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>Sauegjeter</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>Saueklipper</span></div></li><li><div class='json-key-wrapper'><span class='json-key'>Tittel: </span><span>Ullklassifisør</span></div></li></ul></div></div></div><div class='json-array-wrapper'><h3 class='json-key'>Sertifikater</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-array-wrapper'><h3 class='json-key'>Fagdokumentasjoner</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-key-wrapper'><span class='json-key'>Synlig for arbeidsgiver: </span><span>Nei</span></div><div class='json-array-wrapper'><h3 class='json-key'>Annen erfaring</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-array-wrapper'><h3 class='json-key'>Godkjenninger</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-array-wrapper'><h3 class='json-key'>Sprak</h3><ul class='json-array'><li><div class='json-key-wrapper'><span class='json-key'>Sprak: </span><span>Norsk</span></div><div class='json-key-wrapper'><span class='json-key'>Muntlig niva: </span><span>FOERSTESPRAAK</span></div><div class='json-key-wrapper'><span class='json-key'>Skriftlig niva: </span><span>FOERSTESPRAAK</span></div></li></ul></div><div class='json-key-wrapper'><span class='json-key'>Sist endret: </span><span>2023-12-06T10:47:51.821994+01:00</span></div><div class='json-key-wrapper'><span class='json-key'>Sist endret av nav: </span><span>Nei</span></div><div class='json-array-wrapper'><h3 class='json-key'>Kurs</h3><p class='json-array-empty'>Ingen oppføringer</p></div><div class='json-array-wrapper'><h3 class='json-key'>Andre godkjenninger</h3><p class='json-array-empty'>Ingen oppføringer</p></div></div>"}
+{
+  "sistEndret": "2024-04-03T14:44:25.425298+02:00",
+  "synligForArbeidsgiver": false,
+  "sistEndretAvNav": true,
+  "sammendrag": "Trivelig person med kjærlighet for sau, som har tonnevis med allsidig kompetanse og fantastiske personlige egenskaper.",
+  "arbeidserfaring": [
+    {
+      "tittel": "Sauepasser",
+      "arbeidsgiver": "Dolly gård",
+      "sted": "Sauda",
+      "beskrivelse": "Passe på at sauene har det bra.",
+      "fraDato": "2016-01-01",
+      "tilDato": "2019-12-31"
+    },
+    {
+      "tittel": "Sauepasser",
+      "arbeidsgiver": "Dolly gård",
+      "sted": "Sauda  ",
+      "beskrivelse": "Passe på at sauene har det bra.",
+      "fraDato": "2016-01-01",
+      "tilDato": "2019-12-31"
+    }
+  ],
+  "utdanning": [
+    {
+      "tittel": "Bachelor i sauefag",
+      "utdanningsnivaa": "Høyere utdanning, 1-4 år",
+      "studiested": "Dolly Universitet",
+      "beskrivelse": "Studier innen sau og syntetiske data.",
+      "fraDato": "2012-08-10",
+      "tilDato": "2015-05-10"
+    }
+  ],
+  "fagdokumentasjoner": [
+    {
+      "tittel": "Svennebrev frisør",
+      "type": "SVENNEBREV_FAGBREV"
+    },
+    {
+      "tittel": "Mesterbrev baker",
+      "type": "MESTERBREV"
+    }
+  ],
+  "godkjenninger": [
+    {
+      "tittel": "Godkjenning som profesjonell pyrotekniker",
+      "utsteder": "Dolly Pyroakademi",
+      "gjennomfortDato": "2017-12-31",
+      "utloperDato": "2027-12-31"
+    }
+  ],
+  "annenErfaring": [
+    {
+      "rolle": "Sauetrener",
+      "beskrivelse": "Mange års erfaring med trening av sau til utstillinger.",
+      "fraDato": "2010-05-01",
+      "tilDato": null
+    }
+  ],
+  "forerkort": [
+    {
+      "klasse": "C - Lastebil"
+    }
+  ],
+  "kurs": [
+    {
+      "tittel": "Kurs i saueklipping",
+      "arrangor": "Dolly Opplæringssenter",
+      "tidspunkt": "2022-07-30",
+      "varighet": {
+        "varighet": 2,
+        "tidsenhet": "UKE"
+      }
+    },
+    {
+      "tittel": "Kurs i tennis",
+      "arrangor": "Dolly Opplæringssenter",
+      "tidspunkt": "2022-07-30",
+      "varighet": {
+        "varighet": 2,
+        "tidsenhet": "UKE"
+      }
+    }
+  ],
+  "sertifikater": [
+    {
+      "tittel": "Ballongførerbevis",
+      "utsteder": "Dolly Luftfart",
+      "gjennomfortDato": "2022-02-02",
+      "utloperDato": "2027-02-02"
+    }
+  ],
+  "andreGodkjenninger": [
+    {
+      "tittel": "Ballongførerbevis",
+      "utsteder": "Dolly Luftfart",
+      "gjennomfortDato": "2022-02-02",
+      "utloperDato": "2027-02-02"
+    }
+  ],
+  "sprak": [
+    {
+      "sprak": "Norsk",
+      "muntligNiva": "FOERSTESPRAAK",
+      "skriftligNiva": "FOERSTESPRAAK"
+    },
+    {
+      "sprak": "Engelsk",
+      "muntligNiva": "GODT",
+      "skriftligNiva": "NYBEGYNNER"
+    }
+  ],
+  "jobbprofil": {
+    "sistEndret": "2024-04-03T14:44:25.843844+02:00",
+    "onsketYrke": [
+      {
+        "tittel": "Frisør"
+      },
+      {
+        "tittel": "Sauegjeter"
+      },
+      {
+        "tittel": "Saueklipper"
+      },
+      {
+        "tittel": "Ullklassifisør"
+      }
+    ],
+    "onsketArbeidssted": [
+      {
+        "stedsnavn": "Hamar"
+      },
+      {
+        "stedsnavn": "Råde"
+      },
+      {
+        "stedsnavn": "Vestby"
+      }
+    ],
+    "onsketAnsettelsesform": [
+      {
+        "tittel": "FAST"
+      },
+      {
+        "tittel": "PROSJEKT"
+      },
+      {
+        "tittel": "FERIEJOBB"
+      }
+    ],
+    "onsketArbeidstidsordning": [
+      {
+        "tittel": "DAGTID"
+      },
+      {
+        "tittel": "KVELD"
+      }
+    ],
+    "onsketArbeidsdagordning": [
+      {
+        "tittel": "UKEDAGER"
+      }
+    ],
+    "onsketArbeidsskiftordning": [],
+    "heltidDeltid": {
+      "heltid": true,
+      "deltid": false
+    },
+    "kompetanse": [
+      {
+        "tittel": "Fange dyr i feller"
+      },
+      {
+        "tittel": "God fysikk"
+      }
+    ],
+    "oppstart": "LEDIG_NAA"
+  }
+}

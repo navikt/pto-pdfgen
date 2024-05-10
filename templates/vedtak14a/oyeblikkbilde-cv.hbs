@@ -8,7 +8,7 @@
     <meta name="description" content="CV"/>
     <meta name="author" content="NAV"/>
     <meta name="subject" content="CV"/>
-    <title>CV-en/jobbprofilen din på nav.no</title>
+    <title>CV-en/jobbønskene dine på nav.no</title>
 </head>
 
 <body>
@@ -18,7 +18,8 @@
             <h1>CV-en/jobbønskene dine på nav.no</h1>
         </div>
         <div class="nav-logo-container">
-            <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg" aria-label="NAV logo" aria-labelledby="logoTitle" role="img" >
+            <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg" aria-label="NAV logo"
+                 aria-labelledby="logoTitle" role="img">
                 <title id="logoTitle">NAV logo</title>
                 <g fill="none" fill-rule="evenodd">
                     <path
@@ -32,10 +33,484 @@
         </div>
     </div>
 
-    <div class="cv-innhold">
-        {{#if ingenData}} <br />{{ingenData}}{{/if}}
-        {{#if htmlView}}
-            {{{htmlView}}}
+    <div class="innhold">
+        {{#if sistEndret}}
+            <span class="json-key">Sist oppdatert:</span>{{iso_to_long_date sistEndret}}
+            {{#if sammendrag}} <br/><span class="json-key">Sammendrag:</span>{{sammendrag}}{{/if}}
+            {{#if utdanning}} <br/>
+                <h3 class="json-key">Utdanning</h3>
+                <ul class="json-array">
+                    {{#each utdanning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if studiested}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Sted:</span>
+                                    <span>{{studiested}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if utdanningsnivaa}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Utdanningsnivå:</span>
+                                    <span>{{utdanningsnivaa}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if fraDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Fra dato:</span>
+                                    <span>{{iso_to_long_date fraDato}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if tilDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Til dato:</span>
+                                    <span>{{iso_to_long_date tilDato}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if beskrivelse}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Beskrivelse:</span>
+                                    <span>{{beskrivelse}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if arbeidserfaring}} <br/>
+                <h3 class="json-key">Arbeidserfaring</h3>
+                <ul class="json-array">
+                    {{#each arbeidserfaring}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if arbeidsgiver}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Arbeidsgiver:</span>
+                                    <span>{{arbeidsgiver}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if sted}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Sted:</span>
+                                    <span>{{sted}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if fraDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Fra dato:</span>
+                                    <span>{{iso_to_long_date fraDato}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if tilDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Til dato:</span>
+                                    <span>{{iso_to_long_date tilDato}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if beskrivelse}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Beskrivelse:</span>
+                                    <span>{{beskrivelse}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if fagdokumentasjoner}} <br/>
+                <h3 class="json-key">Fagdokumentasjoner</h3>
+                <ul class="json-array">
+                    {{#each fagdokumentasjoner}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+
+                            {{#if type}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Type:</span>
+                                    {{#eq type "AUTORISASJON"}} Autorisasjon {{/eq}}
+                                    {{#eq type "MESTERBREV"}} Mesterbrev {{/eq}}
+                                    {{#eq type "SVENNEBREV_FAGBREV"}} Fagbrev/Svennebrev {{/eq}}
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.kompetanse}} <br/>
+                <h3 class="json-key">Kompetanse</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.kompetanse}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketYrke}} <br/>
+                <h3 class="json-key">Ønsket yrke</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketYrke}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidssted}} <br/>
+                <h3 class="json-key">Ønsket arbeidssted</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidssted}}
+                        <li>
+                            {{#if stedsnavn}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Stedsnavn:</span>
+                                    <span>{{stedsnavn}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketAnsettelsesform}} <br/>
+                <h3 class="json-key">Ønsket ansettelsesform</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketAnsettelsesform}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidstidsordning}} <br/>
+                <h3 class="json-key">Ønsket arbeidstidsordning</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidstidsordning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidsdagordning}} <br/>
+                <h3 class="json-key">Ønsket arbeidsdagordning</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidsdagordning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidsskiftordning}} <br/>
+                <h3 class="json-key">Ønsket arbeidsskiftordning</h3>
+                <ul class="json-array">
+                    {{#each jobbprofil.onsketArbeidsskiftordning}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.onsketArbeidsskiftordning}} <br/>
+                <h3 class="json-key">Heltid eller deltid</h3>
+                <ul class="json-array">
+                    <li>
+                        {{#if jobbprofil.onsketArbeidsskiftordning.heltid}}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Heltid:</span>
+                                <span>Ja</span>
+                            </div>
+                            <br/>
+                        {{/if}}
+                        {{#if jobbprofil.onsketArbeidsskiftordning.deltid}}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Deltid:</span>
+                                <span>Ja</span>
+                            </div>
+                        {{/if}}
+                    </li>
+                </ul>
+            {{/if}}
+
+            {{#if jobbprofil.oppstart}} <br/>
+                <h3 class="json-key">Oppstart</h3>
+                 <ul class="json-array">
+                    <li>
+                        <span class="json-key">Oppstart:</span>
+                        <span>{{ jobbprofil.oppstart }}</span>
+                    </li>
+                 </ul>
+
+            {{/if}}
+
+            {{#if sprak}} <br/>
+                <h3 class="json-key">Språk</h3>
+                <ul class="json-array">
+                    {{#each sprak}}
+                        <li>
+                            {{#if sprak}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Språk:</span>
+                                    <span>{{sprak}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if muntligNiva}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Muntlig:</span>
+                                    {{#eq muntligNiva "FOERSTESPRAAK"}} Førstespråk (morsmål) {{/eq}}
+                                    {{#eq muntligNiva "VELDIG_GODT"}} Veldig godt {{/eq}}
+                                    {{#eq muntligNiva "GODT"}} Godt {{/eq}}
+                                    {{#eq muntligNiva "NYBEGYNNER"}} Nybegynner {{/eq}}
+                                    {{#eq muntligNiva "IKKE_OPPGITT"}} Ikke oppgitt {{/eq}}
+                                </div>
+                            {{/if}}
+                            {{#if skriftligNiva}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Skriftlig:</span>
+                                    {{#eq skriftligNiva "FOERSTESPRAAK"}} Førstespråk (morsmål) {{/eq}}
+                                    {{#eq skriftligNiva "VELDIG_GODT"}} Veldig godt {{/eq}}
+                                    {{#eq skriftligNiva "GODT"}} Godt {{/eq}}
+                                    {{#eq skriftligNiva "NYBEGYNNER"}} Nybegynner {{/eq}}
+                                    {{#eq skriftligNiva "IKKE_OPPGITT"}} Ikke oppgitt {{/eq}}
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if kurs}} <br/>
+                <h3 class="json-key">Kurs</h3>
+                <ul class="json-array">
+                    {{#each kurs}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if arrangor}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Arrangør:</span>
+                                    <span>{{arrangor}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if tidspunkt}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Fullført:</span>
+                                    <span>{{iso_to_long_date tidspunkt}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if varighet}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Kurslengde:</span>
+                                    <span>{{varighet.varighet}}
+                                    {{#eq varighet.varighet 1}}
+                                        {{#eq varighet.tidsenhet "TIME"}} time {{/eq}}
+                                        {{#eq varighet.tidsenhet "DAG"}} dag {{/eq}}
+                                        {{#eq varighet.tidsenhet "UKE"}} uke {{/eq}}
+                                        {{#eq varighet.tidsenhet "MND"}} måned {{/eq}}
+                                    {{/eq}}
+
+                                    {{#not_eq varighet.varighet 1}}
+                                        {{#eq varighet.tidsenhet "TIME"}} timer {{/eq}}
+                                        {{#eq varighet.tidsenhet "DAG"}} dager {{/eq}}
+                                        {{#eq varighet.tidsenhet "UKE"}} uker {{/eq}}
+                                        {{#eq varighet.tidsenhet "MND"}} måneder {{/eq}}
+                                    {{/not_eq}}
+                                    </span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if forerkort}} <br/>
+                <h3 class="json-key">Førerkort</h3>
+                <ul class="json-array">
+                    {{#each forerkort}}
+                        <li>
+                            {{#if klasse}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Klasse:</span>
+                                    <span>{{klasse}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if annenErfaring}} <br/>
+                <h3 class="json-key">Annen Erfaring</h3>
+                <ul class="json-array">
+                    {{#each annenErfaring}}
+                        <li>
+                            {{#if rolle}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Rolle:</span>
+                                    <span>{{rolle}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if beskrivelse}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Beskrivelse:</span>
+                                    <span>{{beskrivelse}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if fraDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Startdato:</span>
+                                    <span>{{iso_to_long_date fraDato}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if tilDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Sluttdato:</span>
+                                    <span>{{iso_to_long_date tilDato}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if godkjenninger}} <br/>
+                <h3 class="json-key">Godkjenninger</h3>
+                <ul class="json-array">
+                    {{#each godkjenninger}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if utsteder}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Utsteder:</span>
+                                    <span>{{utsteder}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if gjennomfortDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Fullført:</span>
+                                    <span>{{iso_to_long_date gjennomfortDato}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if utloperDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Utløper:</span>
+                                    <span>{{iso_to_long_date utloperDato}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+
+            {{#if andreGodkjenninger}} <br/>
+                <h3 class="json-key">Andre Godkjenninger</h3>
+                <ul class="json-array">
+                    {{#each andreGodkjenninger}}
+                        <li>
+                            {{#if tittel}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Tittel:</span>
+                                    <span>{{tittel}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if utsteder}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Utsteder:</span>
+                                    <span>{{utsteder}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if gjennomfortDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Fullført:</span>
+                                    <span>{{iso_to_long_date gjennomfortDato}}</span>
+                                </div>
+                            {{/if}}
+                            {{#if utloperDato}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Utløper:</span>
+                                    <span>{{iso_to_long_date utloperDato}}</span>
+                                </div>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        {{else}}
+            <b>Ingen registrerte data:</b> Personen har ikke registrert CV/jobbønsker.
         {{/if}}
     </div>
 </div>
