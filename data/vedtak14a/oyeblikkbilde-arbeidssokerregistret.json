@@ -1,0 +1,57 @@
+{
+  "opplysningerOmArbeidssoeker": {
+    "opplysningerOmArbeidssoekerId": "64b86ec9-e0c0-423b-8d64-28c2a9b2f220",
+    "periodeId": "bebde3fd-12ea-465e-a66d-7d28eb885615",
+    "sendtInnAv": {
+      "tidspunkt": "2024-06-04T06:41:08.969Z",
+      "utfoertAv": {
+        "type": "SLUTTBRUKER",
+        "id": "29439431340"
+      },
+      "kilde": "paw-arbeidssoekerregisteret-inngang",
+      "aarsak": "opplysning om arbeidssøker sendt inn"
+    },
+    "utdanning": {
+      "nus": "HOYERE_UTDANNING_1_TIL_4",
+      "bestaatt": "JA",
+      "godkjent": "NEI"
+    },
+    "helse": {
+      "helsetilstandHindrerArbeid": "NEI"
+    },
+    "annet": {
+      "andreForholdHindrerArbeid": "JA"
+    },
+    "jobbsituasjon": [
+      {
+        "beskrivelse": "VIL_BYTTE_JOBB",
+        "detaljer": {
+          "stilling_styrk08": "00",
+          "gjelder_til_dato_iso8601": "null",
+          "stilling": "Annen stilling",
+          "siste_dag_med_loenn_iso8601": "null",
+          "gjelder_fra_dato_iso8601": "null",
+          "siste_arbeidsdag_iso8601": "null"
+        }
+      }
+    ]
+  },
+  "profilering": {
+    "profileringId": "89301b4d-d291-46f1-8845-8e7dcbe159f4",
+    "periodeId": "bebde3fd-12ea-465e-a66d-7d28eb885615",
+    "opplysningerOmArbeidssoekerId": "64b86ec9-e0c0-423b-8d64-28c2a9b2f220",
+    "sendtInnAv": {
+      "tidspunkt": "2024-06-04T06:41:09.355Z",
+      "utfoertAv": {
+        "type": "SYSTEM",
+        "id": "null-null"
+      },
+      "kilde": "null-null",
+      "aarsak": "opplysninger-mottatt"
+    },
+    "profilertTil": "OPPGITT_HINDRINGER",
+    "jobbetSammenhengendeSeksAvTolvSisteManeder": true,
+    "alder": 30
+  },
+  "arbeidssoekerperiodeStartet": "2024-06-04T06:41:08.795Z"
+}
