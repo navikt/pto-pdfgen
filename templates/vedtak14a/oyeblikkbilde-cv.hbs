@@ -220,7 +220,18 @@
                             {{#if tittel}}
                                 <div class="json-key-wrapper">
                                     <span class="json-key">Tittel:</span>
-                                    <span>{{tittel}}</span>
+                                    <span>
+                                    {{#eq tittel "FAST"}} Fast {{/eq}}
+                                    {{#eq tittel "VIKARIAT"}} Vikariat {{/eq}}
+                                    {{#eq tittel "ENGASJEMENT"}} Engasjement {{/eq}}
+                                    {{#eq tittel "PROSJEKT"}} Prosjekt {{/eq}}
+                                    {{#eq tittel "SESONG"}} Sesong {{/eq}}
+                                    {{#eq tittel "TRAINEE"}} Trainee {{/eq}}
+                                    {{#eq tittel "LAERLING"}} Lærling {{/eq}}
+                                    {{#eq tittel "SELVSTENDIG_NAERINGSDRIVENDE"}} Selvstendig næringsdrivende {{/eq}}
+                                    {{#eq tittel "FERIEJOBB"}} Feriejobb {{/eq}}
+                                    {{#eq tittel "ANNET"}} Annet {{/eq}}
+                                    </span>
                                 </div>
                             {{/if}}
                         </li>
@@ -236,7 +247,17 @@
                             {{#if tittel}}
                                 <div class="json-key-wrapper">
                                     <span class="json-key">Tittel:</span>
-                                    <span>{{tittel}}</span>
+                                    <span>
+                                    {{#eq tittel "DAGTID"}} Dagtid {{/eq}}
+                                    {{#eq tittel "KVELD"}} Kveld {{/eq}}
+                                    {{#eq tittel "NATT"}} Natt {{/eq}}
+                                    {{#eq tittel "UKEDAGER"}} Ukedager {{/eq}}
+                                    {{#eq tittel "LOERDAG"}} Lørdag {{/eq}}
+                                    {{#eq tittel "SOENDAG"}} Søndag {{/eq}}
+                                    {{#eq tittel "SKIFT"}} Skift {{/eq}}
+                                    {{#eq tittel "VAKT"}} Vakt {{/eq}}
+                                    {{#eq tittel "TURNUS"}} Turnus {{/eq}}
+                                    </span>
                                 </div>
                             {{/if}}
                         </li>
@@ -252,7 +273,17 @@
                             {{#if tittel}}
                                 <div class="json-key-wrapper">
                                     <span class="json-key">Tittel:</span>
-                                    <span>{{tittel}}</span>
+                                    <span>
+                                    {{#eq tittel "DAGTID"}} Dagtid {{/eq}}
+                                    {{#eq tittel "KVELD"}} Kveld {{/eq}}
+                                    {{#eq tittel "NATT"}} Natt {{/eq}}
+                                    {{#eq tittel "UKEDAGER"}} Ukedager {{/eq}}
+                                    {{#eq tittel "LOERDAG"}} Lørdag {{/eq}}
+                                    {{#eq tittel "SOENDAG"}} Søndag {{/eq}}
+                                    {{#eq tittel "SKIFT"}} Skift {{/eq}}
+                                    {{#eq tittel "VAKT"}} Vakt {{/eq}}
+                                    {{#eq tittel "TURNUS"}} Turnus {{/eq}}
+                                    </span>
                                 </div>
                             {{/if}}
                         </li>
@@ -268,7 +299,17 @@
                             {{#if tittel}}
                                 <div class="json-key-wrapper">
                                     <span class="json-key">Tittel:</span>
-                                    <span>{{tittel}}</span>
+                                    <span>
+                                    {{#eq tittel "DAGTID"}} Dagtid {{/eq}}
+                                    {{#eq tittel "KVELD"}} Kveld {{/eq}}
+                                    {{#eq tittel "NATT"}} Natt {{/eq}}
+                                    {{#eq tittel "UKEDAGER"}} Ukedager {{/eq}}
+                                    {{#eq tittel "LOERDAG"}} Lørdag {{/eq}}
+                                    {{#eq tittel "SOENDAG"}} Søndag {{/eq}}
+                                    {{#eq tittel "SKIFT"}} Skift {{/eq}}
+                                    {{#eq tittel "VAKT"}} Vakt {{/eq}}
+                                    {{#eq tittel "TURNUS"}} Turnus {{/eq}}
+                                    </span>
                                 </div>
                             {{/if}}
                         </li>
@@ -302,7 +343,11 @@
                  <ul class="json-array">
                     <li>
                         <span class="json-key">Oppstart:</span>
-                        <span>{{ jobbprofil.oppstart }}</span>
+                        <span>
+                        {{#eq jobbprofil.oppstart "LEDIG_NAA"}} Kan begynne nå {{/eq}}
+                        {{#eq jobbprofil.oppstart "ETTER_TRE_MND"}} Har 3 måneders oppsigelse {{/eq}}
+                        {{#eq jobbprofil.oppstart "ETTER_AVTALE"}} Kan begynne etter nærmere avtale {{/eq}}
+                        </span>
                     </li>
                  </ul>
 
