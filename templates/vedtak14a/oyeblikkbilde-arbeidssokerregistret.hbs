@@ -36,7 +36,24 @@
         {{#if opplysningerOmArbeidssoeker}}
             <div class="json-obj">
                 {{#if arbeidssoekerperiodeStartet}}
-                    <div class="json-key-wrapper"><span class="json-key">Opprettet dato: </span><span>{{iso_to_long_date arbeidssoekerperiodeStartet}}</span></div>
+                    <div class="json-key-wrapper"><span class="json-key">Registrert: </span><span>{{iso_to_long_date arbeidssoekerperiodeStartet}}</span></div>
+                {{/if}}
+                {{#if opplysningerOmArbeidssoeker.sendtInnAv}}
+                    {{#if opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}
+                        <div class="json-key-wrapper"><span class="json-key">Sist oppdatert: </span>
+                        <span>{{iso_to_long_date opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}</span></div>
+                    {{/if}}
+
+                    {{#if opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv}}
+                        {{#eq opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv.type "VEILEDER"}}
+                            <div class="json-obj">
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Registrert av ident: </span>
+                                    <span>{{opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv.id}}</span>
+                                </div>
+                            </div>
+                        {{/eq}}
+                    {{/if}}
                 {{/if}}
 
                 {{#if opplysningerOmArbeidssoeker}}
@@ -128,19 +145,6 @@
                              {{/eq}}
 
                         </div>
-                {{/if}}
-
-                {{#if opplysningerOmArbeidssoeker.sendtInnAv}}
-                    {{#if opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv}}
-                    {{#eq opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv.type "VEILEDER"}}
-                        <div class="json-obj">
-                            <div class="json-key-wrapper">
-                                <span class="json-key">Registrert av ident: </span>
-                                <span>{{opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv.id}}</span>
-                            </div>
-                        </div>
-                    {{/eq}}
-                    {{/if}}
                 {{/if}}
             </div>
         {{else}}
