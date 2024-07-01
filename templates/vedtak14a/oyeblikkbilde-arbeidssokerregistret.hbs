@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    {{#block 'vedtak14a/partials/oyeblikk-style' }}
+    {{/block}}
+    <meta name="description" content="Registreringsdata"/>
+    <meta name="author" content="NAV"/>
+    <meta name="subject" content="Registreringsdata"/>
+    <title>Svarene dine fra da du registrerte deg</title>
+</head>
+
+<body>
+<div class="main">
+    <div class="header">
+        <div class="nav-logo-container">
+            <div class="titel">
+                <h1>Svarene dine fra da du registrerte deg</h1>
+            </div>
+            <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg" aria-label="NAV logo" aria-labelledby="logoTitle" role="img" >
+                <title id="logoTitle">NAV logo</title>
+                <g fill="none" fill-rule="evenodd">
+                    <path
+                            d="M125.31 168.942c-46.642 0-84.46-37.817-84.46-84.465C40.85 37.824 78.667 0 125.31 0c46.657 0 84.48 37.824 84.48 84.477 0 46.648-37.823 84.465-84.48 84.465ZM0 121.359l17.265-42.73h16.589l-17.243 42.73zM213.044 121.359l17.044-42.73h9.044l-17.043 42.73zM246.564 121.359l17.04-42.73h4.804l-17.044 42.73z"
+                            fill="#C30000" />
+                    <path
+                            d="M197.36 78.63h-15.016s-1.035 0-1.4.914l-8.31 25.439-8.304-25.44c-.366-.913-1.407-.913-1.407-.913h-28.872c-.625 0-1.149.522-1.149 1.143v8.639c0-6.853-7.292-9.782-11.562-9.782-9.562 0-15.963 6.298-17.956 15.873-.108-6.352-.636-8.628-2.347-10.96-.786-1.141-1.922-2.101-3.159-2.895-2.547-1.492-4.834-2.018-9.749-2.018h-5.77s-1.044 0-1.412.914l-5.25 13.013V79.773c0-.621-.52-1.143-1.145-1.143H61.198s-1.03 0-1.406.914l-5.459 13.53s-.545 1.354.701 1.354h5.133v25.784c0 .64.504 1.147 1.147 1.147h13.238c.624 0 1.144-.507 1.144-1.147V94.428h5.16c2.961 0 3.588.08 4.74.618.694.262 1.32.792 1.66 1.403.698 1.314.873 2.892.873 7.545v16.218c0 .64.514 1.147 1.15 1.147h12.687s1.434 0 2.001-1.416l2.812-6.95c3.74 5.237 9.893 8.366 17.541 8.366h1.671s1.443 0 2.014-1.416l4.897-12.128v12.397c0 .64.524 1.147 1.15 1.147h12.951s1.43 0 2.003-1.416c0 0 5.18-12.861 5.2-12.958h.008c.2-1.07-1.153-1.07-1.153-1.07h-4.623V83.847l14.545 36.096c.568 1.416 2 1.416 2 1.416h15.301s1.44 0 2.008-1.416l16.125-39.93c.558-1.383-1.057-1.383-1.057-1.383Zm-64.458 27.285h-8.7c-3.463 0-6.28-2.804-6.28-6.271 0-3.461 2.817-6.283 6.28-6.283h2.433c3.454 0 6.267 2.822 6.267 6.283v6.27Z"
+                            fill="#FEFEFE" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="innhold">
+        {{#if opplysningerOmArbeidssoeker}}
+            <div class="json-obj">
+                {{#if arbeidssoekerperiodeStartet}}
+                    <div class="json-key-wrapper"><span class="json-key">Registrert: </span><span>{{iso_to_long_date arbeidssoekerperiodeStartet}}</span></div>
+                {{/if}}
+                {{#if opplysningerOmArbeidssoeker.sendtInnAv}}
+                    {{#if opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}
+                        <div class="json-key-wrapper"><span class="json-key">Sist oppdatert: </span>
+                        <span>{{iso_to_long_date opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}</span></div>
+                    {{/if}}
+
+                    {{#if opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv}}
+                        {{#eq opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv.type "VEILEDER"}}
+                            <div class="json-key-wrapper"><span class="json-key">Registrert av ident: </span>
+                            <span>{{opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv.id}}</span></div>
+                        {{/eq}}
+                    {{/if}}
+                {{/if}}
+
+                {{#if opplysningerOmArbeidssoeker}}
+                    <h3 class="json-key">Besvarelse</h3>
+                    <div class="json-obj">
+                        {{#if opplysningerOmArbeidssoeker.utdanning.nus}}
+                            <div class="json-key-wrapper"><span class="json-key">Hva er din høyeste fullførte utdanning? </span>
+                            <span>
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "INGEN_UTDANNING"}} Ingen utdanning {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "GRUNNSKOLE"}} Grunnskole {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "VIDEREGAENDE_GRUNNUTDANNING"}} Videregående grunnutdanning (1 til 2 år) {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "VIDEREGAENDE_FAGBREV_SVENNEBREV"}} Videregående, fagbrev eller svennebrev (3 år eller mer) {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "HOYERE_UTDANNING_1_TIL_4"}} Høyere utdanning (1 til 4 år) {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "HOYERE_UTDANNING_5_ELLER_MER"}} Høyere utdanning (5 år eller mer) {{/eq}}
+                            </span>
+                            </div>
+                        {{/if}}
+                        {{#if opplysningerOmArbeidssoeker.utdanning.bestaatt}}
+                            <div class="json-key-wrapper"><span class="json-key">Er utdanningen din bestått? </span><span>
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.bestaatt "JA"}} Ja {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.bestaatt "NEI"}} Nei {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if opplysningerOmArbeidssoeker.utdanning.godkjent}}
+                            <div class="json-key-wrapper"><span class="json-key">Er utdanningen din godkjent i Norge? </span><span>
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "JA"}} Ja {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "NEI"}} Nei {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "VET_IKKE"}} Vet ikke {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if opplysningerOmArbeidssoeker.jobbsituasjon}}
+                            <div class="json-key-wrapper"><span class="json-key">Vel alternativet som stemmer best på situasjonen din? </span>
+                            <span>
+                            <ul>
+                            {{#each opplysningerOmArbeidssoeker.jobbsituasjon}}
+                                 <li>
+                                    {{#eq beskrivelse "MISTET_JOBBEN"}} Har mistet eller kommer til å miste jobben {{/eq}}
+                                    {{#eq beskrivelse "HAR_SAGT_OPP"}} Har sagt opp eller kommer til å si opp {{/eq}}
+                                    {{#eq beskrivelse "DELTIDSJOBB_VIL_MER"}} Har deltidsjobb, men vil jobbe mer {{/eq}}
+                                    {{#eq beskrivelse "ALDRI_HATT_JOBB"}} Har aldri vært i jobb {{/eq}}
+                                    {{#eq beskrivelse "VIL_BYTTE_JOBB"}} Har jobb, men vil bytte {{/eq}}
+                                    {{#eq beskrivelse "JOBB_OVER_2_AAR"}} Har ikke vært i jobb de siste 2 årene {{/eq}}
+                                    {{#eq beskrivelse "ER_PERMITTERT"}} Er permittert eller kommer til å bli permittert {{/eq}}
+                                    {{#eq beskrivelse "USIKKER_JOBBSITUASJON"}} Er usikker på jobbsituasjonen min {{/eq}}
+                                    {{#eq beskrivelse "AKKURAT_FULLFORT_UTDANNING"}} Har akkurat fullført utdanning, militærtjeneste eller annet {{/eq}}
+                                    {{#eq beskrivelse "VIL_FORTSETTE_I_JOBB"}} Har jobb og ønsker å fortsette i den jobben jeg er i {{/eq}}
+                                 </li>
+                            {{/each}}
+                            </ul>
+                            </span></div>
+                        {{/if}}
+                        {{#if opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid}}
+                            <div class="json-key-wrapper"><span class="json-key">Har du andre problemer med å søke eller være i jobb? </span><span>
+                            {{#eq opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid "JA"}} Ja {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid "NEI"}} Nei {{/eq}}
+                            </span></div>
+                        {{/if}}
+                        {{#if opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid}}
+                            <div class="json-key-wrapper"><span class="json-key">Har du helseproblemer som hindrer deg i å søke eller være i jobb? </span><span>
+                            {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "JA"}} Ja {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "NEI"}} Nei {{/eq}}
+                            {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "INGEN_SVAR"}} Ikke besvart {{/eq}}
+                            </span></div>
+                        {{/if}}
+                    </div>
+                {{/if}}
+
+                {{#if profilering}}
+                        <h3 class="json-key">Profilering</h3>
+                        <div class="json-obj">
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Forslag om brukers muligheter og behov (resultat fra profilering): </span>
+                                {{#eq profilering.profilertTil "ANTATT_GODE_MULIGHETER"}} Antatt rask overgang til arbeid: Vurder om brukeren har gode muligheter til å beholde eller komme i jobb på egenhånd. {{/eq}}
+                                {{#eq profilering.profilertTil "ANTATT_BEHOV_FOR_VEILEDNING"}} Antatt behov for veiledning: Vurder brukerens jobbmuligheter og behov for veiledning. {{/eq}}
+                                {{#eq profilering.profilertTil "OPPGITT_HINDRINGER"}} Brukeren har oppgitt hindringer: Vurder brukerens jobbmuligheter og behov for veiledning. {{/eq}}
+                            </div>
+
+                            {{#eq profilering.jobbetSammenhengendeSeksAvTolvSisteManeder "true"}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Brukeren har vært sammenhengende i jobb minst 6 av de siste 12 måneder: </span>
+                                    <span>Ja</span>
+                                </div>
+                            {{/eq}}
+                            {{#eq profilering.jobbetSammenhengendeSeksAvTolvSisteManeder "false"}}
+                                <div class="json-key-wrapper">
+                                    <span class="json-key">Brukeren har vært sammenhengende i jobb minst 6 av de siste 12 måneder: </span>
+                                    <span>Nei</span>
+                                </div>
+                             {{/eq}}
+
+                        </div>
+                {{/if}}
+            </div>
+        {{else}}
+            <b>Ingen registrerte data:</b> Brukeren har ikke registrert seg via den nye registreringsløsningen.
+        {{/if}}
+    </div>
+</div>
+</body>
+
+</html>
