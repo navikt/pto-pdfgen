@@ -9,7 +9,7 @@ spec:
   image: {{image}}
   port: 8080
   ingresses:
-    - https://pto-pdfgen.intern.dev.nav.no
+    - {{ ingress }}
   liveness:
     path: /is_alive
   readiness:
