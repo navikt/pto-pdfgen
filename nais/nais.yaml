@@ -8,6 +8,8 @@ metadata:
 spec:
   image: {{image}}
   port: 8080
+  ingresses:
+    - https://pto-pdfgen.intern.dev.nav.no
   liveness:
     path: /is_alive
   readiness:
@@ -25,3 +27,9 @@ spec:
     requests:
       cpu: {{ resources_requests_cpu }}
       memory: {{ resources_requests_memory }}
+  accessPolicy:
+    inbound:
+      rules:
+        - application: veilarbvedtaksstotte
+          namespace: pto
+          cluster: dev-fss
