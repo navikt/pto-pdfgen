@@ -24,7 +24,7 @@ jobs:
         uses: nais/docker-build-push@v0
         id: docker-build-push
         with:
-          team: pto
+          team: obo
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
           project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
@@ -43,7 +43,7 @@ jobs:
       - name: Deploy application
         uses: nais/deploy/actions/deploy@v2
         env:
-          CLUSTER: dev-fss
+          CLUSTER: dev-gcp
           RESOURCE: nais/nais.yaml
           VARS: nais/vars-dev.yml
           VAR: image=${{ needs.build-and-push.outputs.image }}
@@ -63,7 +63,7 @@ jobs:
       - name: Deploy application
         uses: nais/deploy/actions/deploy@v2
         env:
-          CLUSTER: prod-fss
+          CLUSTER: prod-gcp
           RESOURCE: nais/nais.yaml
           VARS: nais/vars-prod.yml
           VAR: image=${{ needs.build-and-push.outputs.image }}
