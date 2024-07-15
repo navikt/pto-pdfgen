@@ -2,12 +2,14 @@ apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
   name: pto-pdfgen
-  namespace: pto
+  namespace: obo
   labels:
-    team: pto
+    team: obo
 spec:
   image: {{image}}
   port: 8080
+  ingresses:
+    - {{ ingress }}
   liveness:
     path: /is_alive
   readiness:
@@ -25,3 +27,9 @@ spec:
     requests:
       cpu: {{ resources_requests_cpu }}
       memory: {{ resources_requests_memory }}
+  accessPolicy:
+    inbound:
+      rules:
+        - application: veilarbvedtaksstotte
+          namespace: pto
+          cluster: dev-fss

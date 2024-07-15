@@ -1,3 +1,4 @@
+ingress: https://pto-pdfgen.intern.nav.no
 resources_limits_cpu: 750m
 resources_limits_memory: 1Gi
 resources_requests_cpu: 500m
