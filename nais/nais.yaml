@@ -33,4 +33,4 @@ spec:
         - application: veilarbvedtaksstotte
           namespace: pto
           cluster: prod-fss
-        - application veilarbvedtaksstotte
+        - application: veilarbvedtaksstotte
