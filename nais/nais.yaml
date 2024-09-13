@@ -32,4 +32,5 @@ spec:
       rules:
         - application: veilarbvedtaksstotte
           namespace: pto
-          cluster: dev-fss
+          cluster: prod-fss
+        - application veilarbvedtaksstotte
