@@ -9,7 +9,7 @@ spec:
   image: {{image}}
   port: 8080
   ingresses:
-    - {{ ingress }}
+    - https://pto-pdfgen.intern.dev.nav.no
   liveness:
     path: /is_alive
   readiness:
@@ -19,18 +19,14 @@ spec:
     path: /prometheus
   replicas:
     min: 1
-    max: 4
+    max: 2
   resources:
     limits:
-      cpu: {{ resources_limits_cpu }}
-      memory: {{ resources_limits_memory }}
+      memory: 512Mi
     requests:
-      cpu: {{ resources_requests_cpu }}
-      memory: {{ resources_requests_memory }}
+      cpu: 200m
+      memory: 256Mi
   accessPolicy:
     inbound:
       rules:
-        - application: veilarbvedtaksstotte
-          namespace: pto
-          cluster: prod-fss
         - application: veilarbvedtaksstotte

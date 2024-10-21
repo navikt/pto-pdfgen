@@ -1,0 +1,35 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: pto-pdfgen
+  namespace: obo
+  labels:
+    team: obo
+spec:
+  image: {{image}}
+  port: 8080
+  ingresses:
+    - https://pto-pdfgen.intern.nav.no
+  liveness:
+    path: /is_alive
+  readiness:
+    path: /is_alive
+  prometheus:
+    enabled: true
+    path: /prometheus
+  replicas:
+    min: 1
+    max: 4
+  resources:
+    limits:
+      memory: 1Gi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+  accessPolicy:
+    inbound:
+      rules:
+        - application: veilarbvedtaksstotte
+          namespace: pto
+          cluster: prod-fss
+        - application: veilarbvedtaksstotte
