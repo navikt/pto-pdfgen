@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CURRENT_PATH="$(pwd)"
-PDFGEN_VERSION=2.0.56
+PDFGEN_VERSION=2.0.57
 
 # Legg til for debug: -e JDK_JAVA_OPTIONS \
 
