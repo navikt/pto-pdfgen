@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     {{#block 'vedtak14a/partials/oyeblikk-style' }}
     {{/block}}
-    <meta name="description" content="Behovsvurdering"/>
-    <meta name="author" content="NAV"/>
-    <meta name="subject" content="Behovsvurdering"/>
+    <meta name="description" content="Behovsvurdering" />
+    <meta name="author" content="NAV" />
+    <meta name="subject" content="Behovsvurdering" />
     <title>Svarene dine om behov for veiledning</title>
 </head>
 
@@ -18,8 +18,9 @@
                 <h1>Svarene dine om behov for veiledning</h1>
             </div>
             <div class="nav-logo-container">
-                <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg" aria-label="NAV logo" aria-labelledby="logoTitle" role="img" >
-                    <title id="logoTitle">NAV logo</title>
+                <svg class="nav-logo" viewBox="0 -1 269 171" xmlns="http://www.w3.org/2000/svg" aria-label="NAV-logo"
+                    aria-hidden="true" role="img">
+                    <title>Nav-logo</title>
                     <g fill="none" fill-rule="evenodd">
                         <path
                             d="M125.31 168.942c-46.642 0-84.46-37.817-84.46-84.465C40.85 37.824 78.667 0 125.31 0c46.657 0 84.48 37.824 84.48 84.477 0 46.648-37.823 84.465-84.48 84.465ZM0 121.359l17.265-42.73h16.589l-17.243 42.73zM213.044 121.359l17.044-42.73h9.044l-17.043 42.73zM246.564 121.359l17.04-42.73h4.804l-17.044 42.73z"
@@ -34,40 +35,40 @@
 
         <div class="innhold">
             {{#if sistOppdatert}}
-                <div class="json-key-wrapper">
-                    <span class="json-key">Sist oppdatert: </span>
-                    <span>{{iso_to_long_date sistOppdatert}}</span>
-                </div>
+            <div class="json-key-wrapper">
+                <span class="json-key">Sist oppdatert: </span>
+                <span>{{iso_to_long_date sistOppdatert}}</span>
+            </div>
 
-                <div class="json-array-wrapper">
-                    <h3 class="json-key">Svar</h3>
-                    <ul class="json-array">
-                        {{#each svar}}
-                            <li>
-                                {{#if spm}}
-                                    <div class="json-key-wrapper">
-                                        <span class="json-key">Spørsmål: </span>
-                                        <span>{{spm}}</span>
-                                    </div>
-                                {{/if}}
-                                {{#if svar}}
-                                    <div class="json-key-wrapper">
-                                        <span class="json-key">Svar: </span>
-                                        <span>{{svar}}</span>
-                                    </div>
-                                {{/if}}
-                                {{#if dialogId}}
-                                    <div class="json-key-wrapper">
-                                        <span class="json-key">DialogId: </span>
-                                        <span>{{dialogId}}</span>
-                                    </div>
-                                {{/if}}
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
+            <div class="json-array-wrapper">
+                <h3 class="json-key">Svar</h3>
+                <ul class="json-array">
+                    {{#each svar}}
+                    <li>
+                        {{#if spm}}
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Spørsmål: </span>
+                            <span>{{spm}}</span>
+                        </div>
+                        {{/if}}
+                        {{#if svar}}
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Svar: </span>
+                            <span>{{svar}}</span>
+                        </div>
+                        {{/if}}
+                        {{#if dialogId}}
+                        <div class="json-key-wrapper">
+                            <span class="json-key">DialogId: </span>
+                            <span>{{dialogId}}</span>
+                        </div>
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
             {{else}}
-                <b>Ingen registrerte data:</b> Personen har ikke registrert svar om behov for veiledning.
+            <b>Ingen registrerte data:</b> Personen har ikke registrert svar om behov for veiledning.
             {{/if}}
         </div>
     </div>
