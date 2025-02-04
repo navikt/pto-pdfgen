@@ -3,7 +3,7 @@
   "svar": [
     {
       "spm": "Hva slags veiledning ønsker du?",
-      "svar": "Jeg ønsker oppfølging fra NAV",
+      "svar": "Jeg ønsker oppfølging fra Nav",
       "oppfolging": "SITUASJONSBESTEMT_INNSATS",
       "dialogId": "617462"
     }
