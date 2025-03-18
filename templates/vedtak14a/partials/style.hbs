@@ -2,82 +2,66 @@
     html,
     body {
         margin: 0;
-        font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-        line-height: 1.3;
-    }
-
-    h1 {
-        font-size: 16pt;
-    }
-
-    h2 {
-        margin-top: 48px;
-        font-size: 14pt;
-    }
-
-    img {
-        image-rendering: auto;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+        font-size: 11pt;
+        line-height: 16pt;
     }
 
     @page {
         size: A4 portrait;
-        margin: 2cm 2.5cm;
-        padding-bottom: 2cm;
+        margin: 64pt 64pt 74pt;
+        padding-bottom: 26pt;
 
-        @bottom-center {
-            content: element(footer);
+
+        @bottom-right {
+            content: element(sidetall)
         }
     }
 
-    .main {
-        height: 0;
-        /*for å vise footer på alle sider*/
+    #nav-logo {
+        margin-bottom: 48pt;
     }
 
-    .header {
-        height: 7cm;
+    h1 {
+        margin-top: 48pt;
+        margin-bottom: 26pt;
+        font-size: 16pt;
+        line-height: 20pt;
+        letter-spacing: 0.3pt;
     }
 
-    .header__info {
-        display: block;
-        margin-top: 1cm;
-        margin-bottom: 1cm;
+    h2,
+    h3 {
+        margin-top: 26pt;
     }
 
-    .nav-logo-container {
-        display: block;
-        height: 80px;
-        margin-bottom: 0.5cm;
+    h2 {
+        font-size: 13pt;
+        letter-spacing: 0.25pt;
     }
 
-    .nav-logo {
-        width: 95px;
-        height: auto;
-        float: right;
-    }
-
-    .mottaker {
-        display: inline;
+    h3 {
         font-size: 12pt;
-        float: left;
-        width: 50%;
+        letter-spacing: 0.2pt;
+    }
+
+    .personalia-table {
+        width: 100%;
+    }
+
+    .personalia-table th {
+        /* Satt til 19% for å kunne inkludere ordet "fødselsnummer", men samtidig gi mest mulig plass til navnet */
+        width: 19%;
+        font-weight: normal;
     }
 
     .dato-og-unntatt {
-        display: inline;
-        font-size: 12pt;
-        float: right;
         text-align: right;
-        width: 50%;
-    }
-
-    .unntatt-offentligheten {
-        font-size: 11pt;
     }
 
     .innhold {
         position: relative;
-        z-index: 100;
         clear: both;
     }
 
@@ -86,6 +70,7 @@
         transform: rotate(-45deg);
         left: 15px;
         top: 400px;
+        z-index: -1;
     }
 
     .vannmerke {
@@ -94,25 +79,23 @@
         font-weight: bold;
     }
 
-    .footer {
-        border-top: 1px solid black;
-        padding-top: 16px;
-        margin-top: -2.5cm;
-        width: 160mm;
-        position: running(footer);
-        font-size: 11pt;
+    footer {
+        position: running(sidetall);
+        height: 32pt;
+        margin-bottom: 26pt;
+        font-size: 9pt;
     }
 
-    .page-counter {
-        display: inline;
-        margin: 0;
+    .sidetall {
+        float: right;
     }
 
-    .page-counter::after {
-        position: absolute;
-        bottom: 55px;
-        right: -30px;
-        content: "Side "counter(page) " av "counter(pages);
+    #sidenummer:before {
+        content: counter(page);
+    }
+
+    #sideantall:before {
+        content: counter(pages)
     }
 
     .avoid-page-break {
