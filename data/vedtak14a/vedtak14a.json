@@ -7,13 +7,8 @@
   "begrunnelse": ["Avsnitt 1", "Avsnitt 2"],
   "kilder": ["Kilde 1", "Kilde 2"],
   "mottaker": {
-    "navn": "NAVN NAVNESEN",
-    "adresselinje1": "ADRESSELINJE 1",
-    "adresselinje2": "ADRESSELINJE 2",
-    "adresselinje3": null,
-    "postnummer": "0000",
-    "poststed": "STED",
-    "land": null
+    "navn": "Navn Navnesen",
+    "fodselsnummer": "12345678910"
   },
   "kontaktEnhetNavn": "Nav Kontaktenhet",
   "postadresse": {
