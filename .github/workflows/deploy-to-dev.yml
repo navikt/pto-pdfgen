@@ -17,13 +17,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Authenticate to access Docker image
+        uses: nais/login@v0
+        with:
+          team: obo
+
       - name: Build and push Docker image
         uses: nais/docker-build-push@v0
         id: docker-build-push
         with:
           team: obo
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
 
   deploy-dev:
     name: Deploy application to dev
