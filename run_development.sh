@@ -1,11 +1,11 @@
 #!/bin/bash
 
 CURRENT_PATH="$(pwd)"
-PDFGEN_VERSION=2.0.57
+PDFGEN_VERSION=2.0.72
 
 # Legg til for debug: -e JDK_JAVA_OPTIONS \
 
-docker pull ghcr.io/navikt/pdfgen:$PDFGEN_VERSION
+docker pull europe-north1-docker.pkg.dev/nais-management-233d/pdfgen/pdfgen:$PDFGEN_VERSION
 docker run \
         -v $CURRENT_PATH/templates:/app/templates \
         -v $CURRENT_PATH/fonts:/app/fonts \
@@ -15,4 +15,4 @@ docker run \
         -e JDK_JAVA_OPTIONS \
         -it \
         --rm \
-        ghcr.io/navikt/pdfgen:$PDFGEN_VERSION
+        europe-north1-docker.pkg.dev/nais-management-233d/pdfgen/pdfgen:$PDFGEN_VERSION
