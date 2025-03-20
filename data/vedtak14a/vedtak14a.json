@@ -10,11 +10,5 @@
     "navn": "Navn Navnesen",
     "fodselsnummer": "12345678910"
   },
-  "kontaktEnhetNavn": "Nav Kontaktenhet",
-  "postadresse": {
-    "adresselinje": "Postadressen",
-    "postnummer": "4321",
-    "poststed": "Post Sted"
-  },
   "utkast": true
 }
