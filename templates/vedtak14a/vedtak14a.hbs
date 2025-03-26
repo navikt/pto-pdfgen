@@ -1,18 +1,18 @@
 {{#> vedtak14a/base}}
-        {{> vedtak14a/partials/innledning}}
-        {{> vedtak14a/partials/begrunnelse}}
-        {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID" }}
-            {{> vedtak14a/partials/hjelp}}
-        {{/eq}}
-        {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID_PROFILERING" }}
-            {{> vedtak14a/partials/hjelp}}
-        {{/eq}}
-        {{#eq malType "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID" }}
-            {{> vedtak14a/partials/hjelp}}
-        {{/eq}}
-        {{> vedtak14a/partials/kilder}}
-        {{> vedtak14a/partials/klage}}
-        {{> vedtak14a/partials/sporsmal}}
-        <br/>
-        {{> vedtak14a/partials/signatur}}
+    {{> vedtak14a/partials/innledning}}
+    {{> vedtak14a/partials/begrunnelse}}
+
+    {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp}}
+    {{/eq}}
+    {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID_PROFILERING" }}
+        {{> vedtak14a/partials/hjelp}}
+    {{/eq}}
+    {{#eq malType "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp}}
+    {{/eq}}
+    {{> vedtak14a/partials/kilder}}
+    {{> vedtak14a/partials/klage}}
+    {{> vedtak14a/partials/sporsmal}}
+    {{> vedtak14a/partials/signatur}}
 {{/vedtak14a/base}}

@@ -48,21 +48,29 @@
 
     .personalia-table {
         width: 100%;
+        border-spacing: 0;
     }
 
     .personalia-table th {
-        /* Satt til 19% for å kunne inkludere ordet "fødselsnummer", men samtidig gi mest mulig plass til navnet */
-        width: 19%;
         font-weight: normal;
+    }
+
+    #header--navn {
+        vertical-align: top;
     }
 
     .dato-og-unntatt {
         text-align: right;
+        vertical-align: top;
     }
 
     .innhold {
         position: relative;
         clear: both;
+    }
+
+    #signatur {
+        margin-top: 32pt;
     }
 
     .vannmerke-container {
@@ -98,12 +106,16 @@
         content: counter(pages)
     }
 
+    .lenke {
+        display: inline-block;
+        white-space: nowrap;
+    }
+
     .avoid-page-break {
         page-break-inside: avoid;
     }
 
-    .lenke {
-        display: inline-block;
-        white-space: nowrap;
+    .word-break {
+        word-wrap: break-word;
     }
 </style>

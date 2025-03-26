@@ -22,22 +22,30 @@
         </svg>
 
         <table class="personalia-table">
+            <colgroup>
+                <col style="width: 82pt;" />
+                <col />
+                <col style="width: 11pt;" />
+                <col style="width: 95pt;" />
+            </colgroup>
             <tr>
-                <th scope="row">Navn:</th>
-                <td>{{mottaker.navn}}</td>
+                <th scope="row" id="header--navn">Navn:</th>
+                <td colspan="2" class="word-break">{{mottaker.navn}}</td>
                 <td class="dato-og-unntatt">{{dato}}</td>
             </tr>
             <tr>
                 <th scope="row">Fødselsnummer:</th>
                 <td>{{mottaker.fodselsnummer}}</td>
-                <td class="dato-og-unntatt"><em class="unntatt-offentligheten">
+                <td colspan="2" class="dato-og-unntatt">
+                    <em>
                         {{#eq malform "NN"}}
-                        Unntatt offentlegheita
+                            Unntatt offentlegheita
                         {{/eq}}
                         {{#eq malform "NB"}}
-                        Unntatt offentligheten
+                            Unntatt offentligheten
                         {{/eq}}
-                    </em></td>
+                    </em>
+                </td>
             </tr>
         </table>
     </header>
@@ -51,9 +59,9 @@
     </div>
 
     {{#if utkast}}
-    <div class="vannmerke-container">
-        <span class="vannmerke">UTKAST</span>
-    </div>
+        <div class="vannmerke-container">
+            <span class="vannmerke">UTKAST</span>
+        </div>
     {{/if}}
 </body>
 
