@@ -1,13 +1,17 @@
 <div class="avoid-page-break">
     <h2>Du har rett til å klage</h2>
+    {{#eq malform "NN"}}
     <p>
-        {{#eq malform "NN"}}
-            Dersom du er ueinig i vurderinga, kan du klage innan tre veker frå brevet har kome fram. Du finn skjema og
-            informasjon på <span class="lenke">nav.no/klage</span>.
-        {{/eq}}
-        {{#eq malform "NB"}}
-            Hvis du er uenig i vurderingen, kan du klage innen tre uker fra brevet har kommet frem. Du finner skjema og
-            informasjon på <span class="lenke">nav.no/klage</span>.
-        {{/eq}}
+        Dersom du er ueinig i vurderinga, kan du klage innan tre veker frå datoen då vedtaket kom fram til deg. Du finn
+        skjema og informasjon på <span class="lenke">nav.no/klage</span>.
     </p>
+    <p>Meir informasjon om retten til å klage finn du på <span class="lenke">nav.no/klagerettigheter</span>.</p>
+    {{/eq}}
+    {{#eq malform "NB"}}
+    <p>
+        Hvis du er uenig i vurderingen, kan du klage innen tre uker fra datoen da vedtaket kom fram til deg. Du finner
+        skjema og informasjon på <span class="lenke">nav.no/klage</span>.
+    </p>
+    <p>Mer informasjon om retten til å klage finner du på <span class="lenke">nav.no/klagerettigheter</span>.</p>
+    {{/eq}}
 </div>

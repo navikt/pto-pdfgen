@@ -1,15 +1,15 @@
 <div class="avoid-page-break">
     <h2>Har du spørsmål?</h2>
-    <p>
-        {{#eq malform "NN"}}
-            Du kan kontakte rettleiaren din på <span class="lenke">nav.no/arbeid/dialog</span> eller ringje
-            kontaktsenteret vårt på telefon 55 55 33 33. Dersom du har søkt om økonomisk støtte, får du svar når
-            søknaden din er behandla, på <span class="lenke">person.nav.no/mine-saker</span>.
-        {{/eq}}
-        {{#eq malform "NB"}}
-            Du kan kontakte veilederen din på <span class="lenke">nav.no/arbeid/dialog</span> eller ringe
-            kontaktsenteret vårt på telefon 55 55 33 33. Hvis du har søkt om økonomisk støtte, får du svar når søknaden
-            din er behandlet på <span class="lenke">person.nav.no/mine-saker</span>.
-        {{/eq}}
-    </p>
+    {{#eq malform "NN"}}
+        <p>Du finn meir informasjon på <span class="lenke">nav.no/arbeid</span>.</p>
+        <p>På <span class="lenke">nav.no/arbeid/dialog</span> kan du kontakte rettleiaren din.</p>
+        <p>Om du ikkje finn svar på nav.no, kan du ringe oss på telefon 55 55 33 33, kvardagar 09:00–15:00.</p>
+
+    {{/eq}}
+    {{#eq malform "NB"}}
+        <p>Du finner mer informasjon på <span class="lenke">nav.no/arbeid</span>.</p>
+        <p>På <span class="lenke">nav.no/arbeid/dialog</span> kan du kontakte veilederen din.</p>
+        <p>Hvis du ikke finner svar på nav.no, kan du ringe oss på telefon 55 55 33 33,
+            hverdager 09:00–15:00.</p>
+    {{/eq}}
 </div>
