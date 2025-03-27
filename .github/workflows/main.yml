@@ -1,18 +1,14 @@
-name: Test, build, push and deploy
+name: Build, push and deploy
 on: push
 env:
   IMAGE_TAG: ${{ github.sha }}
   PRINT_PAYLOAD: true
-permissions:
-  packages: write
-  contents: write
 jobs:
   build-and-push:
     name: Build and push
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
-      contents: read
       id-token: write
     outputs:
       image: ${{ steps.docker-build-push.outputs.image }}
@@ -26,25 +22,6 @@ jobs:
         with:
           team: obo
 
-  deploy-dev:
-    name: Deploy application to dev
-    if: github.ref == 'refs/heads/dev'
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy application
-        uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: dev-gcp
-          RESOURCE: .nais/application-config-dev.yaml
-          VAR: image=${{ needs.build-and-push.outputs.image }}
-
   deploy-prod:
     name: Deploy application to prod
     if: github.ref == 'refs/heads/main'
@@ -52,7 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -69,7 +45,6 @@ jobs:
     needs: deploy-prod
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: write
     steps:
       - name: Create release

@@ -7,7 +7,7 @@ PDF generator for PTO.
 
 ~~For å laste ned pdf-gen-imaget lokalt må du autentisere deg mot gcloud.~~
 
-- ~~Kjør `gcloud auth login` eventuelt `nais login~~
+- ~~Kjør `gcloud auth login` eventuelt `nais login`~~
 - ~~Kun første gang, kjør `gcloud auth configure-docker europe-north1-docker.pkg.dev` og godta~~
 
 ~~Nå skal~du ha tilgang til å laste ned imaget fra GAR (Google Artifact Registry) lokalt.~~

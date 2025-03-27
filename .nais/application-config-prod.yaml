@@ -24,8 +24,8 @@ spec:
     limits:
       memory: 1Gi
     requests:
-      cpu: 500m
-      memory: 512Mi
+      cpu: 200m
+      memory: 768Mi
   accessPolicy:
     inbound:
       rules:
