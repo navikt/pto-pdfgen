@@ -1,8 +1,8 @@
 {
-  "malType": "STANDARD_INNSATS_SKAFFE_ARBEID",
-  "veilederNavn": "Veiledersen, Veileder",
+  "malType": "GODE_MULIGHETER_SKAFFE_ARBEID_PROFILERING",
+  "veilederNavn": "Veileder Veiledersen",
   "navKontor": "Nav Kontor",
-  "dato": "20. januar 2020",
+  "dato": "01. april 2025",
   "malform": "NB",
   "begrunnelse": ["Avsnitt 1", "Avsnitt 2"],
   "kilder": ["Kilde 1", "Kilde 2"],
