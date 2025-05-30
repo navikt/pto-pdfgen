@@ -30,3 +30,8 @@ spec:
     inbound:
       rules:
         - application: veilarbvedtaksstotte
+  observability:
+    logging:
+      destinations:
+        - id: elastic
+        - id: loki
