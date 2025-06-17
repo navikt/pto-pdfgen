@@ -20,3 +20,4 @@ mottaker: {
     fodselsnummer: <Fnr>
 }
 utkast: <boolean>
+ungdomsgaranti: <boolean>

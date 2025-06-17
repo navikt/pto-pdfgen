@@ -10,5 +10,6 @@
     "navn": "Navn Navnesen",
     "fodselsnummer": "12345678910"
   },
-  "utkast": true
+  "utkast": true,
+  "ungdomsgaranti": false
 }
