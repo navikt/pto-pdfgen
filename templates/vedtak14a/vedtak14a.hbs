@@ -1,5 +1,10 @@
 {{#> vedtak14a/base}}
     {{> vedtak14a/partials/innledning}}
+
+    {{#if ungdomsgaranti}}
+        {{> vedtak14a/partials/ungdomsgaranti}}
+    {{/if}}
+
     {{> vedtak14a/partials/begrunnelse}}
 
     {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID" }}
