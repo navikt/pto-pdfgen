@@ -62,5 +62,9 @@
     "manueltRegistrertAv": null,
     "endretAv": null,
     "endretTidspunkt": null
+  },
+  "mottaker": {
+    "navn": "Navn Navnesen",
+    "fodselsnummer": "12345678910"
   }
 }
