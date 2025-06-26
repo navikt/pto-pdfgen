@@ -1,3 +1,4 @@
+[//]: # (Disse er de nye innsatsgruppene som skal erstatte de gamle )
 malType:
     GODE_MULIGHETER_BEHOLDE_ARBEID ||
     GODE_MULIGHETER_SKAFFE_ARBEID ||
@@ -8,7 +9,6 @@ malType:
     TRENGER_VEILEDNING_NEDSATT_ARBEIDSEVNE_SKAFFE_ARBEID ||
     JOBBE_DELVIS ||
     LITEN_MULIGHET_TIL_A_JOBBE
-
 veilederNavn: <string>
 navKontor: <string>
 dato: <dato>, på formen: 20. januar 2020
@@ -20,3 +20,4 @@ mottaker: {
     fodselsnummer: <Fnr>
 }
 utkast: <boolean>
+ungdomsgaranti: <boolean>
