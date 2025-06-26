@@ -37,25 +37,25 @@
                 <span>{{iso_to_long_date sistOppdatert}}</span>
             </div>
 
-            <div class="json-array-wrapper">
-                <h3 class="json-key">Svar</h3>
-                <ul class="json-array">
+            <div>
+                <h2>Svar</h2>
+                <ul>
                     {{#each svar}}
                         <li>
                             {{#if spm}}
-                                <div class="json-key-wrapper">
+                                <div>
                                     <span class="json-key">Spørsmål: </span>
                                     <span>{{spm}}</span>
                                 </div>
                             {{/if}}
                             {{#if svar}}
-                                <div class="json-key-wrapper">
+                                <div>
                                     <span class="json-key">Svar: </span>
                                     <span>{{svar}}</span>
                                 </div>
                             {{/if}}
                             {{#if dialogId}}
-                                <div class="json-key-wrapper">
+                                <div>
                                     <span class="json-key">DialogId: </span>
                                     <span>{{dialogId}}</span>
                                 </div>

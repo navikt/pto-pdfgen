@@ -32,14 +32,14 @@
         <h1>Svarene dine fra da du registrerte deg</h1>
 
         {{#if registrering}}
-            <div class="json-obj">
+            <div >
                 {{#if registrering.opprettetDato}}
                     <div class="json-key-wrapper"><span class="json-key">Opprettet dato: </span><span>{{iso_to_long_date registrering.opprettetDato}}</span></div>
                 {{/if}}
 
                 {{#if registrering.besvarelse}}
-                    <h3 class="json-key">Besvarelse</h3>
-                    <div class="json-obj">
+                    <h2>Besvarelse</h2>
+                    <div>
                         {{#if registrering.besvarelse.utdanning}}
                             <div class="json-key-wrapper"><span class="json-key">Hva er din høyeste fullførte utdanning? </span>
                             <span>
@@ -128,49 +128,46 @@
 
 
                 {{#if registrering.teksterForBesvarelse}}
-                    <div class="json-array-wrapper">
-                        <h3 class="json-key">Tekster for besvarelse</h3>
-                        <ul class="json-array">
+                        <h2>Tekster for besvarelse</h2>
+                        <ul>
                         {{#each registrering.teksterForBesvarelse}}
                              <li>
-                                <div class="json-key-wrapper"><span class="json-key">Spørsmål: </span><span>{{sporsmal}}</span></div>
-                                <div class="json-key-wrapper"><span class="json-key">Svar: </span><span>{{svar}}</span></div>
+                                <div><span class="json-key">Spørsmål: </span><span>{{sporsmal}}</span></div>
+                                <div><span class="json-key">Svar: </span><span>{{svar}}</span></div>
                              </li>
                         {{/each}}
                         </ul>
-                    </div>
                 {{/if}}
 
 
                 {{#if registrering.sisteStilling}}
-                    <h3 class="json-key">Siste stilling</h3>
-                    <div class="json-obj"><div class="json-key-wrapper"><span class="json-key">Stilling: </span><span>{{registrering.sisteStilling.label}}</span></div></div>
+                    <h2>Siste stilling</h2>
+                    <div class="json-key-wrapper"><span class="json-key">Stilling: </span><span>{{registrering.sisteStilling.label}}</span></div>
                 {{/if}}
 
                 {{#if registrering.profilering}}
-                        <h3 class="json-key">Profilering</h3>
-                        <div class="json-obj">
-                            <div class="json-key-wrapper">
-                                <span class="json-key">Innsatsgruppe: </span>
-                                {{#eq registrering.profilering.innsatsgruppe "STANDARD_INNSATS"}} Standard innsats {{/eq}}
-                                {{#eq registrering.profilering.innsatsgruppe "SITUASJONSBESTEMT_INNSATS"}} Situasjonsbestemt innsats {{/eq}}
-                                {{#eq registrering.profilering.innsatsgruppe "BEHOV_FOR_ARBEIDSEVNEVURDERING"}} Behov for arbeidsevnevurdering {{/eq}}
-                            </div>
-                            <div class="json-key-wrapper">
-                                <span class="json-key">Alder: </span>
-                                <span>{{registrering.profilering.alder}}</span>
-                            </div>
-                            {{#if profilering.jobbetSammenhengendeSeksAvTolvSisteManeder }}
-                                <div class="json-key-wrapper">
-                                    <span class="json-key">Jobbet sammenhengende seks av tolv siste måneder: </span>
-                                    <span>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}</span>
-                                </div>
-                            {{/if}}
+                    <h2>Profilering</h2>
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Innsatsgruppe: </span>
+                            {{#eq registrering.profilering.innsatsgruppe "STANDARD_INNSATS"}} Standard innsats {{/eq}}
+                            {{#eq registrering.profilering.innsatsgruppe "SITUASJONSBESTEMT_INNSATS"}} Situasjonsbestemt innsats {{/eq}}
+                            {{#eq registrering.profilering.innsatsgruppe "BEHOV_FOR_ARBEIDSEVNEVURDERING"}} Behov for arbeidsevnevurdering {{/eq}}
                         </div>
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Alder: </span>
+                            <span>{{registrering.profilering.alder}}</span>
+                        </div>
+                        {{#if profilering.jobbetSammenhengendeSeksAvTolvSisteManeder }}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Jobbet sammenhengende seks av tolv siste måneder: </span>
+                                <span>{{profilering.jobbetSammenhengendeSeksAvTolvSisteManeder}}</span>
+                            </div>
+                        {{/if}}
                 {{/if}}
 
                 {{#if registrering.manueltRegistrertAv}}
-                    <div class="json-obj">
+                    <br/>
+                    <div>
                         <div class="json-key-wrapper">
                             <span class="json-key">Registrert av ident: </span>
                             <span>{{registrering.manueltRegistrertAv.ident}}</span>

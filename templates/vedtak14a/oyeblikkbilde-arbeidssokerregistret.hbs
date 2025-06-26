@@ -32,13 +32,14 @@
         <h1>Det du fortalte oss da du ble registrert som arbeidssøker</h1>
 
         {{#if arbeidssoekerperiodeStartet}}
-            <div class="json-obj">
+            <div>
                 <div class="json-key-wrapper"><span class="json-key">Registrert: </span><span>{{iso_to_long_date arbeidssoekerperiodeStartet}}</span></div>
                 {{#if opplysningerOmArbeidssoeker}}
                     {{#if opplysningerOmArbeidssoeker.sendtInnAv}}
                         {{#if opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}
                             <div class="json-key-wrapper"><span class="json-key">Sist oppdatert: </span>
-                            <span>{{iso_to_long_date opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}</span></div>
+                            <span>{{iso_to_long_date opplysningerOmArbeidssoeker.sendtInnAv.tidspunkt}}</span>
+                            </div>
                         {{/if}}
 
                         {{#if opplysningerOmArbeidssoeker.sendtInnAv.utfoertAv}}
@@ -48,96 +49,92 @@
                             {{/eq}}
                         {{/if}}
                     {{/if}}
-                    <h3 class="json-key">Besvarelse</h3>
-                    <div class="json-obj">
-                        {{#if opplysningerOmArbeidssoeker.utdanning.nus}}
-                            <div class="json-key-wrapper"><span class="json-key">Hva er din høyeste fullførte utdanning? </span>
-                            <span>
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "INGEN_UTDANNING"}} Ingen utdanning {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "GRUNNSKOLE"}} Grunnskole {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "VIDEREGAENDE_GRUNNUTDANNING"}} Videregående grunnutdanning (1 til 2 år) {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "VIDEREGAENDE_FAGBREV_SVENNEBREV"}} Videregående, fagbrev eller svennebrev (3 år eller mer) {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "HOYERE_UTDANNING_1_TIL_4"}} Høyere utdanning (1 til 4 år) {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.nus "HOYERE_UTDANNING_5_ELLER_MER"}} Høyere utdanning (5 år eller mer) {{/eq}}
-                            </span>
-                            </div>
-                        {{/if}}
-                        {{#if opplysningerOmArbeidssoeker.utdanning.bestaatt}}
-                            <div class="json-key-wrapper"><span class="json-key">Er utdanningen din bestått? </span><span>
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.bestaatt "JA"}} Ja {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.bestaatt "NEI"}} Nei {{/eq}}
-                            </span></div>
-                        {{/if}}
-                        {{#if opplysningerOmArbeidssoeker.utdanning.godkjent}}
-                            <div class="json-key-wrapper"><span class="json-key">Er utdanningen din godkjent i Norge? </span><span>
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "JA"}} Ja {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "NEI"}} Nei {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "VET_IKKE"}} Vet ikke {{/eq}}
-                            </span></div>
-                        {{/if}}
-                        {{#if opplysningerOmArbeidssoeker.jobbsituasjon}}
-                            <div class="json-key-wrapper"><span class="json-key">Vel alternativet som stemmer best på situasjonen din? </span>
-                            <span>
-                            <ul>
-                            {{#each opplysningerOmArbeidssoeker.jobbsituasjon}}
-                                 <li>
-                                    {{#eq beskrivelse "MISTET_JOBBEN"}} Har mistet eller kommer til å miste jobben {{/eq}}
-                                    {{#eq beskrivelse "HAR_SAGT_OPP"}} Har sagt opp eller kommer til å si opp {{/eq}}
-                                    {{#eq beskrivelse "DELTIDSJOBB_VIL_MER"}} Har deltidsjobb, men vil jobbe mer {{/eq}}
-                                    {{#eq beskrivelse "ALDRI_HATT_JOBB"}} Har aldri vært i jobb {{/eq}}
-                                    {{#eq beskrivelse "VIL_BYTTE_JOBB"}} Har jobb, men vil bytte {{/eq}}
-                                    {{#eq beskrivelse "JOBB_OVER_2_AAR"}} Har ikke vært i jobb de siste 2 årene {{/eq}}
-                                    {{#eq beskrivelse "ER_PERMITTERT"}} Er permittert eller kommer til å bli permittert {{/eq}}
-                                    {{#eq beskrivelse "USIKKER_JOBBSITUASJON"}} Er usikker på jobbsituasjonen min {{/eq}}
-                                    {{#eq beskrivelse "AKKURAT_FULLFORT_UTDANNING"}} Har akkurat fullført utdanning, militærtjeneste eller annet {{/eq}}
-                                    {{#eq beskrivelse "VIL_FORTSETTE_I_JOBB"}} Har jobb og ønsker å fortsette i den jobben jeg er i {{/eq}}
-                                 </li>
-                            {{/each}}
-                            </ul>
-                            </span></div>
-                        {{/if}}
-                        {{#if opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid}}
-                            <div class="json-key-wrapper"><span class="json-key">Har du andre problemer med å søke eller være i jobb? </span><span>
-                            {{#eq opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid "JA"}} Ja {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid "NEI"}} Nei {{/eq}}
-                            </span></div>
-                        {{/if}}
-                        {{#if opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid}}
-                            <div class="json-key-wrapper"><span class="json-key">Har du helseproblemer som hindrer deg i å søke eller være i jobb? </span><span>
-                            {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "JA"}} Ja {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "NEI"}} Nei {{/eq}}
-                            {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "INGEN_SVAR"}} Ikke besvart {{/eq}}
-                            </span></div>
-                        {{/if}}
-                    </div>
+
+                    <h2>Besvarelse</h2>
+                    {{#if opplysningerOmArbeidssoeker.utdanning.nus}}
+                        <div class="json-key-wrapper"><span class="json-key">Hva er din høyeste fullførte utdanning? </span>
+                        <span>
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.nus "INGEN_UTDANNING"}} Ingen utdanning {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.nus "GRUNNSKOLE"}} Grunnskole {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.nus "VIDEREGAENDE_GRUNNUTDANNING"}} Videregående grunnutdanning (1 til 2 år) {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.nus "VIDEREGAENDE_FAGBREV_SVENNEBREV"}} Videregående, fagbrev eller svennebrev (3 år eller mer) {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.nus "HOYERE_UTDANNING_1_TIL_4"}} Høyere utdanning (1 til 4 år) {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.nus "HOYERE_UTDANNING_5_ELLER_MER"}} Høyere utdanning (5 år eller mer) {{/eq}}
+                        </span>
+                        </div>
+                    {{/if}}
+                    {{#if opplysningerOmArbeidssoeker.utdanning.bestaatt}}
+                        <div class="json-key-wrapper"><span class="json-key">Er utdanningen din bestått? </span><span>
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.bestaatt "JA"}} Ja {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.bestaatt "NEI"}} Nei {{/eq}}
+                        </span></div>
+                    {{/if}}
+                    {{#if opplysningerOmArbeidssoeker.utdanning.godkjent}}
+                        <div class="json-key-wrapper"><span class="json-key">Er utdanningen din godkjent i Norge? </span><span>
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "JA"}} Ja {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "NEI"}} Nei {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.utdanning.godkjent "VET_IKKE"}} Vet ikke {{/eq}}
+                        </span></div>
+                    {{/if}}
+                    {{#if opplysningerOmArbeidssoeker.jobbsituasjon}}
+                        <div class="json-key-wrapper"><span class="json-key">Velg alternativet som stemmer best på situasjonen din? </span>
+                        <span>
+                        <ul>
+                        {{#each opplysningerOmArbeidssoeker.jobbsituasjon}}
+                             <li>
+                                {{#eq beskrivelse "MISTET_JOBBEN"}} Har mistet eller kommer til å miste jobben {{/eq}}
+                                {{#eq beskrivelse "HAR_SAGT_OPP"}} Har sagt opp eller kommer til å si opp {{/eq}}
+                                {{#eq beskrivelse "DELTIDSJOBB_VIL_MER"}} Har deltidsjobb, men vil jobbe mer {{/eq}}
+                                {{#eq beskrivelse "ALDRI_HATT_JOBB"}} Har aldri vært i jobb {{/eq}}
+                                {{#eq beskrivelse "VIL_BYTTE_JOBB"}} Har jobb, men vil bytte {{/eq}}
+                                {{#eq beskrivelse "JOBB_OVER_2_AAR"}} Har ikke vært i jobb de siste 2 årene {{/eq}}
+                                {{#eq beskrivelse "ER_PERMITTERT"}} Er permittert eller kommer til å bli permittert {{/eq}}
+                                {{#eq beskrivelse "USIKKER_JOBBSITUASJON"}} Er usikker på jobbsituasjonen min {{/eq}}
+                                {{#eq beskrivelse "AKKURAT_FULLFORT_UTDANNING"}} Har akkurat fullført utdanning, militærtjeneste eller annet {{/eq}}
+                                {{#eq beskrivelse "VIL_FORTSETTE_I_JOBB"}} Har jobb og ønsker å fortsette i den jobben jeg er i {{/eq}}
+                             </li>
+                        {{/each}}
+                        </ul>
+                        </span></div>
+                    {{/if}}
+                    {{#if opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid}}
+                        <div class="json-key-wrapper"><span class="json-key">Har du andre problemer med å søke eller være i jobb? </span><span>
+                        {{#eq opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid "JA"}} Ja {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.annet.andreForholdHindrerArbeid "NEI"}} Nei {{/eq}}
+                        </span></div>
+                    {{/if}}
+                    {{#if opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid}}
+                        <div class="json-key-wrapper"><span class="json-key">Har du helseproblemer som hindrer deg i å søke eller være i jobb? </span><span>
+                        {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "JA"}} Ja {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "NEI"}} Nei {{/eq}}
+                        {{#eq opplysningerOmArbeidssoeker.helse.helsetilstandHindrerArbeid "INGEN_SVAR"}} Ikke besvart {{/eq}}
+                        </span></div>
+                    {{/if}}
                 {{else}}
                    Kunne ikke hente informasjonen du fortalte oss da du ble registrert som arbeidssøker
                 {{/if}}
 
                 {{#if profilering}}
-                        <h3 class="json-key">Profilering</h3>
-                        <div class="json-obj">
-                            <div class="json-key-wrapper">
-                                <span class="json-key">Forslag om brukers muligheter og behov (resultat fra profilering): </span>
-                                {{#eq profilering.profilertTil "ANTATT_GODE_MULIGHETER"}} Antatt rask overgang til arbeid: Vurder om brukeren har gode muligheter til å beholde eller komme i jobb på egenhånd. {{/eq}}
-                                {{#eq profilering.profilertTil "ANTATT_BEHOV_FOR_VEILEDNING"}} Antatt behov for veiledning: Vurder brukerens jobbmuligheter og behov for veiledning. {{/eq}}
-                                {{#eq profilering.profilertTil "OPPGITT_HINDRINGER"}} Brukeren har oppgitt hindringer: Vurder brukerens jobbmuligheter og behov for veiledning. {{/eq}}
-                            </div>
-
-                            {{#eq profilering.jobbetSammenhengendeSeksAvTolvSisteManeder "true"}}
-                                <div class="json-key-wrapper">
-                                    <span class="json-key">Brukeren har vært sammenhengende i jobb minst 6 av de siste 12 måneder: </span>
-                                    <span>Ja</span>
-                                </div>
-                            {{/eq}}
-                            {{#eq profilering.jobbetSammenhengendeSeksAvTolvSisteManeder "false"}}
-                                <div class="json-key-wrapper">
-                                    <span class="json-key">Brukeren har vært sammenhengende i jobb minst 6 av de siste 12 måneder: </span>
-                                    <span>Nei</span>
-                                </div>
-                             {{/eq}}
-
+                        <h2>Profilering</h2>
+                        <div class="json-key-wrapper">
+                            <span class="json-key">Forslag om brukers muligheter og behov (resultat fra profilering): </span>
+                            {{#eq profilering.profilertTil "ANTATT_GODE_MULIGHETER"}} Antatt rask overgang til arbeid: Vurder om brukeren har gode muligheter til å beholde eller komme i jobb på egenhånd. {{/eq}}
+                            {{#eq profilering.profilertTil "ANTATT_BEHOV_FOR_VEILEDNING"}} Antatt behov for veiledning: Vurder brukerens jobbmuligheter og behov for veiledning. {{/eq}}
+                            {{#eq profilering.profilertTil "OPPGITT_HINDRINGER"}} Brukeren har oppgitt hindringer: Vurder brukerens jobbmuligheter og behov for veiledning. {{/eq}}
                         </div>
+
+                        {{#eq profilering.jobbetSammenhengendeSeksAvTolvSisteManeder "true"}}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Brukeren har vært sammenhengende i jobb minst 6 av de siste 12 måneder: </span>
+                                <span>Ja</span>
+                            </div>
+                        {{/eq}}
+                        {{#eq profilering.jobbetSammenhengendeSeksAvTolvSisteManeder "false"}}
+                            <div class="json-key-wrapper">
+                                <span class="json-key">Brukeren har vært sammenhengende i jobb minst 6 av de siste 12 måneder: </span>
+                                <span>Nei</span>
+                            </div>
+                         {{/eq}}
                 {{/if}}
             </div>
         {{else}}
