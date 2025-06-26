@@ -2,6 +2,10 @@
   "sistEndret": "2024-04-03T14:44:25.425298+02:00",
   "synligForArbeidsgiver": false,
   "sistEndretAvNav": true,
+  "mottaker": {
+    "navn": "Navn Navnesen",
+    "fodselsnummer": "12345678910"
+  },
   "sammendrag": "Trivelig person med kjærlighet for sau, som har tonnevis med allsidig kompetanse og fantastiske personlige egenskaper.",
   "arbeidserfaring": [
     {
