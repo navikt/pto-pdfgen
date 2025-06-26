@@ -5,6 +5,10 @@
     {{#eq malform "NB"}}
         Med vennlig hilsen<br />
     {{/eq}}
-    {{veilederNavn}}<br />
+
+    {{#if veilederNavn }}
+        {{veilederNavn}}<br />
+    {{/if}}
+
     {{navKontor}}
 </p>
