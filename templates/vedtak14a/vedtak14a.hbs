@@ -6,17 +6,45 @@
     {{/if}}
 
     {{> vedtak14a/partials/begrunnelse}}
+    {{> vedtak14a/partials/kilder}}
+
 
     {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID" }}
-        {{> vedtak14a/partials/hjelp}}
+        {{> vedtak14a/partials/hjelp-skaffe}}
     {{/eq}}
     {{#eq malType "STANDARD_INNSATS_SKAFFE_ARBEID_PROFILERING" }}
-        {{> vedtak14a/partials/hjelp}}
+        {{> vedtak14a/partials/hjelp-skaffe}}
     {{/eq}}
     {{#eq malType "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID" }}
-        {{> vedtak14a/partials/hjelp}}
+        {{> vedtak14a/partials/hjelp-skaffe}}
     {{/eq}}
-    {{> vedtak14a/partials/kilder}}
+    {{#eq malType "SPESIELT_TILPASSET_INNSATS_SKAFFE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp-skaffe}}
+    {{/eq}}
+    {{#eq malType "GRADERT_VARIG_TILPASSET_INNSATS_SKAFFE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp-skaffe}}
+    {{/eq}}
+
+<!--        TODO slett denne når vedtaksstøtte er deployet til prod-->
+    {{#eq malType "GRADERT_VARIG_TILPASSET_INNSATS" }}
+        {{> vedtak14a/partials/hjelp-skaffe}}
+    {{/eq}}
+
+
+    {{#eq malType "STANDARD_INNSATS_BEHOLDE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp-beholde}}
+    {{/eq}}
+    {{#eq malType "SITUASJONSBESTEMT_INNSATS_BEHOLDE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp-beholde}}
+    {{/eq}}
+    {{#eq malType "SPESIELT_TILPASSET_INNSATS_BEHOLDE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp-beholde}}
+    {{/eq}}
+    {{#eq malType "GRADERT_VARIG_TILPASSET_INNSATS_BEHOLDE_ARBEID" }}
+        {{> vedtak14a/partials/hjelp-beholde}}
+    {{/eq}}
+
+
     {{> vedtak14a/partials/klage}}
     {{> vedtak14a/partials/sporsmal}}
     {{> vedtak14a/partials/signatur}}
