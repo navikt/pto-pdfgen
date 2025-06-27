@@ -12,7 +12,8 @@ malTypes=(
   "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID"
   "SPESIELT_TILPASSET_INNSATS_BEHOLDE_ARBEID"
   "SPESIELT_TILPASSET_INNSATS_SKAFFE_ARBEID"
-  "GRADERT_VARIG_TILPASSET_INNSATS"
+  "GRADERT_VARIG_TILPASSET_INNSATS_BEHOLDE_ARBEID"
+  "GRADERT_VARIG_TILPASSET_INNSATS_SKAFFE_ARBEID"
   "VARIG_TILPASSET_INNSATS"
 )
 malforms=("NN" "NB")
@@ -26,7 +27,8 @@ getMalTypeLesbartNavn() {
     "SITUASJONSBESTEMT_INNSATS_SKAFFE_ARBEID") echo "Trenger veiledning - skaffe arbeid" ;;
     "SPESIELT_TILPASSET_INNSATS_BEHOLDE_ARBEID") echo "Trenger veiledning - nedsatt arbeidsevne beholde arbeid" ;;
     "SPESIELT_TILPASSET_INNSATS_SKAFFE_ARBEID") echo "Trenger veiledning - nedsatt arbeidsevne skaffe arbeid" ;;
-    "GRADERT_VARIG_TILPASSET_INNSATS") echo "Jobbe delvis" ;;
+    "GRADERT_VARIG_TILPASSET_INNSATS_BEHOLDE_ARBEID") echo "Jobbe delvis - beholde arbeid" ;;
+    "GRADERT_VARIG_TILPASSET_INNSATS_SKAFFE_ARBEID") echo "Jobbe delvis - skaffe arbeid" ;;
     "VARIG_TILPASSET_INNSATS") echo "Liten mulighet til å jobbe" ;;
     *) echo "Ukjent malType" ;;
   esac
