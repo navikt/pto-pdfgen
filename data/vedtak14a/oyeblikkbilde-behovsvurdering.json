@@ -7,5 +7,9 @@
       "oppfolging": "SITUASJONSBESTEMT_INNSATS",
       "dialogId": "617462"
     }
-  ]
+  ],
+  "mottaker": {
+    "navn": "Navn Navnesen",
+    "fodselsnummer": "12345678910"
+  }
 }

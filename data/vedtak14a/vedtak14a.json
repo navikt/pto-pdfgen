@@ -1,5 +1,5 @@
 {
-  "malType": "GODE_MULIGHETER_SKAFFE_ARBEID_PROFILERING",
+  "malType": "SITUASJONSBESTEMT_INNSATS_BEHOLDE_ARBEID",
   "veilederNavn": "Veileder Veiledersen",
   "navKontor": "Nav Kontor",
   "dato": "01. april 2025",
@@ -10,5 +10,6 @@
     "navn": "Navn Navnesen",
     "fodselsnummer": "12345678910"
   },
-  "utkast": true
+  "utkast": true,
+  "ungdomsgaranti": false
 }

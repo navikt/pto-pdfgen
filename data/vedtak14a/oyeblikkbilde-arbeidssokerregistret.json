@@ -53,5 +53,9 @@
     "jobbetSammenhengendeSeksAvTolvSisteManeder": true,
     "alder": 30
   },
-  "arbeidssoekerperiodeStartet": "2024-06-04T06:41:08.795Z"
+  "arbeidssoekerperiodeStartet": "2024-06-04T06:41:08.795Z",
+  "mottaker": {
+    "navn": "Navn Navnesen",
+    "fodselsnummer": "12345678910"
+  }
 }

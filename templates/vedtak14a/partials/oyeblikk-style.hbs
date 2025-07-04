@@ -3,70 +3,56 @@
     body {
         margin: 0;
         font-family: "Source Sans 3", sans-serif;
-        line-height: 1.3;
-    }
-
-    h1 {
-        font-size: 16pt;
-    }
-
-    h2 {
-        margin-top: 48px;
-        font-size: 14pt;
-    }
-
-    img {
-        image-rendering: auto;
+        font-weight: 400;
+        font-size: 11pt;
+        line-height: 16pt;
     }
 
     @page {
         size: A4 portrait;
-        margin: 2cm 2.5cm;
-        padding-bottom: 2cm;
+        margin: 64pt 64pt 74pt;
+        padding-bottom: 26pt;
 
-        @bottom-center {
-            content: element(footer);
+        @bottom-right {
+            content: element(sidetall)
         }
     }
 
-    .main {
-        height: 0;
-        /*for å vise footer på alle sider*/
+    #nav-logo {
+        margin-bottom: 48pt;
     }
 
-    .header {
-        height: 3cm;
+    h1 {
+        margin-top: 48pt;
+        margin-bottom: 26pt;
+        font-size: 16pt;
+        line-height: 20pt;
+        letter-spacing: 0.3pt;
     }
 
-    .nav-logo-container {
-        display: block;
-        height: 80px;
-        margin-bottom: 0.5cm;
+    h2,
+    h3 {
+        margin-top: 26pt;
+        margin-bottom: 6pt;
     }
 
-    .nav-logo {
-        width: 95px;
-        height: auto;
-        float: right;
+    h2 {
+        font-size: 13pt;
+        letter-spacing: 0.25pt;
     }
 
-    .titel {
-        width: 440px;
-        height: auto;
-        float: left;
-    }
-
-    .dato-og-unntatt {
-        display: inline;
+    h3 {
         font-size: 12pt;
-        float: right;
-        text-align: right;
-        width: 50%;
+        letter-spacing: 0.2pt;
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .innhold {
         position: relative;
-        z-index: 100;
         clear: both;
     }
 
@@ -74,60 +60,45 @@
         font-weight: bold;
     }
 
-    .footer {
-        border-top: 1px solid black;
-        padding-top: 16px;
-        margin-top: -2.5cm;
-        width: 160mm;
-        position: running(footer);
-        font-size: 11pt;
+    footer {
+        position: running(sidetall);
+        height: 32pt;
+        margin-bottom: 26pt;
+        font-size: 9pt;
     }
 
-    .page-counter {
-        display: inline;
-        margin: 0;
+    .sidetall {
+        float: right;
     }
 
-    .page-counter::after {
-        position: absolute;
-        bottom: 55px;
-        right: -30px;
-        content: "Side " counter(page) " av " counter(pages);
+    #sidenummer:before {
+        content: counter(page);
     }
 
-    .avoid-page-break {
-        page-break-inside: avoid;
+    #sideantall:before {
+        content: counter(pages)
     }
 
-    .lenke {
-        display: inline-block;
-        white-space: nowrap;
+    #header--navn {
+        vertical-align: top;
+    }
+
+    .personalia-table {
+        width: 100%;
+        border-spacing: 0;
+    }
+
+    .personalia-table th {
+        font-weight: normal;
     }
 
     .json-key-wrapper {
-        margin: 0.25rem 0;
+        margin: 0 0 6pt 0;
     }
 
     .json-key {
         font-weight: 600;
-        margin-bottom: 0;
         margin-right: 0.5rem;
     }
 
-    .json-obj {
-        margin: 1rem 0 1rem 2rem;
-    }
-
-    .json-array {
-        margin-top: 0.25rem;
-    }
-
-    .json-array-wrapper {
-        margin: 1rem 0;
-    }
-
-    .json-array-empty {
-        margin: 0;
-        color: #3E3832;
-    }
 </style>
