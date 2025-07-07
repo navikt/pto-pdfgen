@@ -22,6 +22,23 @@ jobs:
         with:
           team: obo
 
+  deploy-dev:
+    name: Deploy application to dev
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy application
+        uses: nais/deploy/actions/deploy@v2
+        env:
+          CLUSTER: dev-gcp
+          RESOURCE: .nais/application-config-dev.yaml
+          VAR: image=${{ needs.build-and-push.outputs.image }}
+
   deploy-prod:
     name: Deploy application to prod
     if: github.ref == 'refs/heads/main'
