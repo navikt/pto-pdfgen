@@ -14,10 +14,10 @@ jobs:
       image: ${{ steps.docker-build-push.outputs.image }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # ratchet:actions/checkout@v6
 
       - name: Build and push Docker image
-        uses: nais/docker-build-push@v0
+        uses: nais/docker-build-push@87f920b0411b987d9a1fd4113aa384e1e3b54f2c # ratchet:nais/docker-build-push@v0
         id: docker-build-push
         with:
           team: obo
@@ -30,10 +30,10 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # ratchet:actions/checkout@v6
 
       - name: Deploy application
-        uses: nais/deploy/actions/deploy@v2
+        uses: nais/deploy/actions/deploy@fa754451577294aae42872a69b888b3470478ec1 # ratchet:nais/deploy/actions/deploy@v2
         env:
           CLUSTER: dev-gcp
           RESOURCE: .nais/application-config-dev.yaml
@@ -48,10 +48,10 @@ jobs:
       id-token: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # ratchet:actions/checkout@v6
 
       - name: Deploy application
-        uses: nais/deploy/actions/deploy@v2
+        uses: nais/deploy/actions/deploy@fa754451577294aae42872a69b888b3470478ec1 # ratchet:nais/deploy/actions/deploy@v2
         env:
           CLUSTER: prod-gcp
           RESOURCE: .nais/application-config-prod.yaml
@@ -65,7 +65,7 @@ jobs:
       contents: write
     steps:
       - name: Create release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # ratchet:softprops/action-gh-release@v2
         with:
           name: Release to prod
           target_commitish: main
